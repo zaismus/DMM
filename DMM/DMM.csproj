@@ -62,6 +62,12 @@
     <Compile Include="AddPage\Add_Supplier.Designer.cs">
       <DependentUpon>Add_Supplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddPage\Log_Supplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPage\Log_Supplier.Designer.cs">
+      <DependentUpon>Log_Supplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddPage\Add_Supplier.resx">
       <DependentUpon>Add_Supplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPage\Log_Supplier.resx">
+      <DependentUpon>Log_Supplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -166,6 +175,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logical_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cleartablestyle.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
