@@ -38,6 +38,11 @@ namespace DMM.Pages
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colFullName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPaymentSuppliers = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPhone = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAddress = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDateT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -138,6 +143,7 @@ namespace DMM.Pages
             // 
             // gridControl1
             // 
+            this.gridControl1.DataSource = typeof(DMM.TB_Suppliers);
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
@@ -149,8 +155,54 @@ namespace DMM.Pages
             // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colFullName,
+            this.colPaymentSuppliers,
+            this.colPhone,
+            this.colAddress,
+            this.colDateT});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            // 
+            // colFullName
+            // 
+            this.colFullName.Caption = "Fournisseur";
+            this.colFullName.FieldName = "FullName";
+            this.colFullName.Name = "colFullName";
+            this.colFullName.Visible = true;
+            this.colFullName.VisibleIndex = 0;
+            // 
+            // colPaymentSuppliers
+            // 
+            this.colPaymentSuppliers.Caption = "Dettes";
+            this.colPaymentSuppliers.FieldName = "PaymentSuppliers";
+            this.colPaymentSuppliers.Name = "colPaymentSuppliers";
+            this.colPaymentSuppliers.Visible = true;
+            this.colPaymentSuppliers.VisibleIndex = 1;
+            // 
+            // colPhone
+            // 
+            this.colPhone.Caption = "Telephone";
+            this.colPhone.FieldName = "Phone";
+            this.colPhone.Name = "colPhone";
+            this.colPhone.Visible = true;
+            this.colPhone.VisibleIndex = 2;
+            // 
+            // colAddress
+            // 
+            this.colAddress.Caption = "Adresse";
+            this.colAddress.FieldName = "Address";
+            this.colAddress.Name = "colAddress";
+            this.colAddress.Visible = true;
+            this.colAddress.VisibleIndex = 3;
+            // 
+            // colDateT
+            // 
+            this.colDateT.Caption = "Date";
+            this.colDateT.FieldName = "DateT";
+            this.colDateT.Name = "colDateT";
+            this.colDateT.Visible = true;
+            this.colDateT.VisibleIndex = 4;
             // 
             // Page_Suppliers
             // 
@@ -178,5 +230,10 @@ namespace DMM.Pages
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraGrid.Columns.GridColumn colFullName;
+        private DevExpress.XtraGrid.Columns.GridColumn colPaymentSuppliers;
+        private DevExpress.XtraGrid.Columns.GridColumn colPhone;
+        private DevExpress.XtraGrid.Columns.GridColumn colAddress;
+        private DevExpress.XtraGrid.Columns.GridColumn colDateT;
     }
 }

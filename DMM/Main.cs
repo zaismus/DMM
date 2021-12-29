@@ -17,15 +17,15 @@ namespace DMM
         public Main()
         {
             InitializeComponent();
-            LoadPage();
+            LoadHomePage();
         }
 
         private void btn_home_Click(object sender, EventArgs e)
         {
-            LoadPage();
+            LoadHomePage();
         }
 
-        private void HomePage(DevExpress.XtraEditors.XtraUserControl Page)
+        private void LoadPage(DevExpress.XtraEditors.XtraUserControl Page)
         {
             try 
             {
@@ -36,16 +36,16 @@ namespace DMM
             catch { }
         }
 
-        private void LoadPage()
+        private void LoadHomePage()
         {
             Page_Home page = new Page_Home();
-            HomePage(page);
+            LoadPage(page);
         }
 
         private void btn_suppliers_Click(object sender, EventArgs e)
         {
             Page_Suppliers page_Suppliers = new Page_Suppliers();
-            HomePage(page_Suppliers);
+            LoadPage(page_Suppliers);
         }
 
         private void btn_customer_Click(object sender, EventArgs e)
