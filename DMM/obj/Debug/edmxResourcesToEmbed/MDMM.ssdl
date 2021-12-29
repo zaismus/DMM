@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBDMMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Debit_Suppliers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Supplier" Type="int" />
+    <Property Name="SupplierName" Type="nvarchar(max)" />
+    <Property Name="FullName" Type="nvarchar(max)" />
+    <Property Name="Debit" Type="float" />
+    <Property Name="DateT" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PaymentSuppliers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Supplier" Type="int" />
+    <Property Name="SupplierName" Type="nvarchar(max)" />
+    <Property Name="Payment" Type="float" />
+    <Property Name="DateT" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TB_Suppliers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar(max)" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Debit" Type="float" />
+    <Property Name="DateT" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_Debit_Suppliers_TB_Suppliers">
+    <End Role="TB_Suppliers" Type="Self.TB_Suppliers" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Debit_Suppliers" Type="Self.Debit_Suppliers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Suppliers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Debit_Suppliers">
+        <PropertyRef Name="ID_Supplier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PaymentSuppliers_TB_Suppliers">
+    <End Role="TB_Suppliers" Type="Self.TB_Suppliers" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PaymentSuppliers" Type="Self.PaymentSuppliers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Suppliers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PaymentSuppliers">
+        <PropertyRef Name="ID_Supplier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBDMMModelStoreContainer">
+    <EntitySet Name="Debit_Suppliers" EntityType="Self.Debit_Suppliers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaymentSuppliers" EntityType="Self.PaymentSuppliers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_Suppliers" EntityType="Self.TB_Suppliers" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Debit_Suppliers_TB_Suppliers" Association="Self.FK_Debit_Suppliers_TB_Suppliers">
+      <End Role="TB_Suppliers" EntitySet="TB_Suppliers" />
+      <End Role="Debit_Suppliers" EntitySet="Debit_Suppliers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PaymentSuppliers_TB_Suppliers" Association="Self.FK_PaymentSuppliers_TB_Suppliers">
+      <End Role="TB_Suppliers" EntitySet="TB_Suppliers" />
+      <End Role="PaymentSuppliers" EntitySet="PaymentSuppliers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

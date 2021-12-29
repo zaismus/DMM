@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DBDMMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Debit_Suppliers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Supplier" Type="int" />
+          <Property Name="SupplierName" Type="nvarchar(max)" />
+          <Property Name="FullName" Type="nvarchar(max)" />
+          <Property Name="Debit" Type="float" />
+          <Property Name="DateT" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PaymentSuppliers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Supplier" Type="int" />
+          <Property Name="SupplierName" Type="nvarchar(max)" />
+          <Property Name="Payment" Type="float" />
+          <Property Name="DateT" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TB_Suppliers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar(max)" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="Debit" Type="float" />
+          <Property Name="DateT" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_Debit_Suppliers_TB_Suppliers">
+          <End Role="TB_Suppliers" Type="Self.TB_Suppliers" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Debit_Suppliers" Type="Self.Debit_Suppliers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Suppliers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Debit_Suppliers">
+              <PropertyRef Name="ID_Supplier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PaymentSuppliers_TB_Suppliers">
+          <End Role="TB_Suppliers" Type="Self.TB_Suppliers" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PaymentSuppliers" Type="Self.PaymentSuppliers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Suppliers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PaymentSuppliers">
+              <PropertyRef Name="ID_Supplier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBDMMModelStoreContainer">
+          <EntitySet Name="Debit_Suppliers" EntityType="Self.Debit_Suppliers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PaymentSuppliers" EntityType="Self.PaymentSuppliers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Suppliers" EntityType="Self.TB_Suppliers" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Debit_Suppliers_TB_Suppliers" Association="Self.FK_Debit_Suppliers_TB_Suppliers">
+            <End Role="TB_Suppliers" EntitySet="TB_Suppliers" />
+            <End Role="Debit_Suppliers" EntitySet="Debit_Suppliers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PaymentSuppliers_TB_Suppliers" Association="Self.FK_PaymentSuppliers_TB_Suppliers">
+            <End Role="TB_Suppliers" EntitySet="TB_Suppliers" />
+            <End Role="PaymentSuppliers" EntitySet="PaymentSuppliers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBDMMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Debit_Suppliers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Supplier" Type="Int32" />
+          <Property Name="SupplierName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FullName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Debit" Type="Double" />
+          <Property Name="DateT" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="TB_Suppliers" Relationship="Self.FK_Debit_Suppliers_TB_Suppliers" FromRole="Debit_Suppliers" ToRole="TB_Suppliers" />
+        </EntityType>
+        <EntityType Name="PaymentSupplier">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Supplier" Type="Int32" />
+          <Property Name="SupplierName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Payment" Type="Double" />
+          <Property Name="DateT" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="TB_Suppliers" Relationship="Self.FK_PaymentSuppliers_TB_Suppliers" FromRole="PaymentSuppliers" ToRole="TB_Suppliers" />
+        </EntityType>
+        <EntityType Name="TB_Suppliers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Debit" Type="Double" />
+          <Property Name="DateT" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Debit_Suppliers" Relationship="Self.FK_Debit_Suppliers_TB_Suppliers" FromRole="TB_Suppliers" ToRole="Debit_Suppliers" />
+          <NavigationProperty Name="PaymentSuppliers" Relationship="Self.FK_PaymentSuppliers_TB_Suppliers" FromRole="TB_Suppliers" ToRole="PaymentSuppliers" />
+        </EntityType>
+        <Association Name="FK_Debit_Suppliers_TB_Suppliers">
+          <End Role="TB_Suppliers" Type="Self.TB_Suppliers" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Debit_Suppliers" Type="Self.Debit_Suppliers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Suppliers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Debit_Suppliers">
+              <PropertyRef Name="ID_Supplier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PaymentSuppliers_TB_Suppliers">
+          <End Role="TB_Suppliers" Type="Self.TB_Suppliers" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PaymentSuppliers" Type="Self.PaymentSupplier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Suppliers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PaymentSuppliers">
+              <PropertyRef Name="ID_Supplier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBDMMEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Debit_Suppliers" EntityType="Self.Debit_Suppliers" />
+          <EntitySet Name="PaymentSuppliers" EntityType="Self.PaymentSupplier" />
+          <EntitySet Name="TB_Suppliers" EntityType="Self.TB_Suppliers" />
+          <AssociationSet Name="FK_Debit_Suppliers_TB_Suppliers" Association="Self.FK_Debit_Suppliers_TB_Suppliers">
+            <End Role="TB_Suppliers" EntitySet="TB_Suppliers" />
+            <End Role="Debit_Suppliers" EntitySet="Debit_Suppliers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PaymentSuppliers_TB_Suppliers" Association="Self.FK_PaymentSuppliers_TB_Suppliers">
+            <End Role="TB_Suppliers" EntitySet="TB_Suppliers" />
+            <End Role="PaymentSuppliers" EntitySet="PaymentSuppliers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBDMMModelStoreContainer" CdmEntityContainer="DBDMMEntities">
+          <EntitySetMapping Name="Debit_Suppliers">
+            <EntityTypeMapping TypeName="DBDMMModel.Debit_Suppliers">
+              <MappingFragment StoreEntitySet="Debit_Suppliers">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_Supplier" ColumnName="ID_Supplier" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Debit" ColumnName="Debit" />
+                <ScalarProperty Name="DateT" ColumnName="DateT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentSuppliers">
+            <EntityTypeMapping TypeName="DBDMMModel.PaymentSupplier">
+              <MappingFragment StoreEntitySet="PaymentSuppliers">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_Supplier" ColumnName="ID_Supplier" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="Payment" ColumnName="Payment" />
+                <ScalarProperty Name="DateT" ColumnName="DateT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Suppliers">
+            <EntityTypeMapping TypeName="DBDMMModel.TB_Suppliers">
+              <MappingFragment StoreEntitySet="TB_Suppliers">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Debit" ColumnName="Debit" />
+                <ScalarProperty Name="DateT" ColumnName="DateT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
