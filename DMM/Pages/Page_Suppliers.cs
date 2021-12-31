@@ -21,7 +21,7 @@ namespace DMM.Pages
 
         // Load Data
 
-        private void LoadData()
+        public void LoadData()
         {
             // Instantiate a new DBContext
             DMM.DBDMMEntities dbContext = new DMM.DBDMMEntities();
@@ -39,6 +39,7 @@ namespace DMM.Pages
             add.id = 0;
             add.btn_add.Text = "Ajouter";
             add.btn_addclose.Text = "Ajouter+Fermé";
+            add.page = this;
             add.Show();
         }
 

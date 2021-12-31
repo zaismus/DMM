@@ -69,7 +69,7 @@ namespace DMM.AddPage
             this.edt_phone.Location = new System.Drawing.Point(36, 188);
             this.edt_phone.Name = "edt_phone";
             this.edt_phone.Size = new System.Drawing.Size(538, 37);
-            this.edt_phone.TabIndex = 3;
+            this.edt_phone.TabIndex = 2;
             // 
             // label2
             // 
@@ -87,7 +87,7 @@ namespace DMM.AddPage
             this.edt_address.Location = new System.Drawing.Point(37, 291);
             this.edt_address.Name = "edt_address";
             this.edt_address.Size = new System.Drawing.Size(538, 37);
-            this.edt_address.TabIndex = 5;
+            this.edt_address.TabIndex = 3;
             // 
             // label3
             // 
@@ -116,11 +116,11 @@ namespace DMM.AddPage
             this.btn_addclose.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_addclose.Appearance.Options.UseFont = true;
             this.btn_addclose.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btn_addclose.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton2.ImageOptions.SvgImage")));
+            this.btn_addclose.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_addclose.ImageOptions.SvgImage")));
             this.btn_addclose.Location = new System.Drawing.Point(436, 12);
             this.btn_addclose.Name = "btn_addclose";
             this.btn_addclose.Size = new System.Drawing.Size(167, 56);
-            this.btn_addclose.TabIndex = 2;
+            this.btn_addclose.TabIndex = 5;
             this.btn_addclose.Text = "Ajouter+Fermé";
             this.btn_addclose.Click += new System.EventHandler(this.btn_addclose_Click);
             // 
@@ -130,11 +130,11 @@ namespace DMM.AddPage
             this.btn_add.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_add.Appearance.Options.UseFont = true;
             this.btn_add.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btn_add.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.btn_add.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_add.ImageOptions.SvgImage")));
             this.btn_add.Location = new System.Drawing.Point(12, 12);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(167, 56);
-            this.btn_add.TabIndex = 1;
+            this.btn_add.TabIndex = 4;
             this.btn_add.Text = "Ajouter";
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 

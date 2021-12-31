@@ -19,10 +19,11 @@ namespace DMM.AddPage
         }
 
 
-        // Define Database, Table & var
+        // Define Database, Table, var & Page
         DBDMMEntities db;
         TB_Suppliers tbAdd;
         public int id;
+        public DMM.Pages.Page_Suppliers page;
 
 
         // Function Add
@@ -35,10 +36,14 @@ namespace DMM.AddPage
             }
             else
             {
+                // Check if Add or Edit
                 if (id == 0)
                     AddData();
                 else
                     EditData();
+
+                // Update Data
+                page.LoadData();
             }
         }
 
@@ -59,7 +64,6 @@ namespace DMM.AddPage
                 db.Entry(tbAdd).State = System.Data.Entity.EntityState.Added;
                 db.SaveChanges();
                 toastNotificationsManager1.ShowNotification("c5735894-7960-49f3-a6b9-8a4d4ab688fd");
-
                 
             }
             catch (Exception ex)
@@ -79,11 +83,21 @@ namespace DMM.AddPage
         private void btn_add_Click(object sender, EventArgs e)
         {
             Add();
+            ClearData();
         }
 
         private void btn_addclose_Click(object sender, EventArgs e)
         {
             Add();
+            Close();
+        }
+
+        // Clear Value
+        private void ClearData()
+        {
+            edt_address.Text =
+            edt_name.Text =
+            edt_phone.Text = "";
         }
     }
 }
