@@ -29,68 +29,71 @@ namespace DMM.AddPage
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_Supplier));
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.edt_name = new System.Windows.Forms.TextBox();
+            this.edt_phone = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.edt_address = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_addclose = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_add = new DevExpress.XtraEditors.SimpleButton();
+            this.toastNotificationsManager1 = new DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(35, 63);
+            this.label1.Location = new System.Drawing.Point(31, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(195, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nom de Fournisseur";
             // 
-            // textBox1
+            // edt_name
             // 
-            this.textBox1.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(40, 102);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(538, 37);
-            this.textBox1.TabIndex = 1;
+            this.edt_name.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edt_name.Location = new System.Drawing.Point(36, 80);
+            this.edt_name.Name = "edt_name";
+            this.edt_name.Size = new System.Drawing.Size(538, 37);
+            this.edt_name.TabIndex = 1;
             // 
-            // textBox2
+            // edt_phone
             // 
-            this.textBox2.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(40, 210);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(538, 37);
-            this.textBox2.TabIndex = 3;
+            this.edt_phone.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edt_phone.Location = new System.Drawing.Point(36, 188);
+            this.edt_phone.Name = "edt_phone";
+            this.edt_phone.Size = new System.Drawing.Size(538, 37);
+            this.edt_phone.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(35, 171);
+            this.label2.Location = new System.Drawing.Point(31, 149);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(210, 36);
             this.label2.TabIndex = 2;
             this.label2.Text = "Numéro de Téléphone";
             // 
-            // textBox3
+            // edt_address
             // 
-            this.textBox3.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(41, 313);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(538, 37);
-            this.textBox3.TabIndex = 5;
+            this.edt_address.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edt_address.Location = new System.Drawing.Point(37, 291);
+            this.edt_address.Name = "edt_address";
+            this.edt_address.Size = new System.Drawing.Size(538, 37);
+            this.edt_address.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(35, 274);
+            this.label3.Location = new System.Drawing.Point(31, 252);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 36);
             this.label3.TabIndex = 4;
@@ -98,51 +101,62 @@ namespace DMM.AddPage
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.simpleButton2);
-            this.panel1.Controls.Add(this.simpleButton1);
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.btn_addclose);
+            this.panel1.Controls.Add(this.btn_add);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 422);
+            this.panel1.Location = new System.Drawing.Point(0, 362);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(615, 80);
             this.panel1.TabIndex = 6;
             // 
-            // simpleButton1
+            // btn_addclose
             // 
-            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.simpleButton1.Location = new System.Drawing.Point(12, 12);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(167, 56);
-            this.simpleButton1.TabIndex = 1;
-            this.simpleButton1.Text = "Ajouter";
+            this.btn_addclose.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_addclose.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_addclose.Appearance.Options.UseFont = true;
+            this.btn_addclose.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btn_addclose.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton2.ImageOptions.SvgImage")));
+            this.btn_addclose.Location = new System.Drawing.Point(436, 12);
+            this.btn_addclose.Name = "btn_addclose";
+            this.btn_addclose.Size = new System.Drawing.Size(167, 56);
+            this.btn_addclose.TabIndex = 2;
+            this.btn_addclose.Text = "Ajouter+Fermé";
+            this.btn_addclose.Click += new System.EventHandler(this.btn_addclose_Click);
             // 
-            // simpleButton2
+            // btn_add
             // 
-            this.simpleButton2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.simpleButton2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton2.ImageOptions.SvgImage")));
-            this.simpleButton2.Location = new System.Drawing.Point(436, 12);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(167, 56);
-            this.simpleButton2.TabIndex = 2;
-            this.simpleButton2.Text = "Ajouter+Fermé";
+            this.btn_add.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_add.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_add.Appearance.Options.UseFont = true;
+            this.btn_add.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btn_add.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.btn_add.Location = new System.Drawing.Point(12, 12);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(167, 56);
+            this.btn_add.TabIndex = 1;
+            this.btn_add.Text = "Ajouter";
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
+            // 
+            // toastNotificationsManager1
+            // 
+            this.toastNotificationsManager1.ApplicationId = "1f97f2dd-6818-4cc6-b95e-1e88f8893d99";
+            this.toastNotificationsManager1.Notifications.AddRange(new DevExpress.XtraBars.ToastNotifications.IToastNotificationProperties[] {
+            new DevExpress.XtraBars.ToastNotifications.ToastNotification("c5735894-7960-49f3-a6b9-8a4d4ab688fd", ((System.Drawing.Image)(resources.GetObject("toastNotificationsManager1.Notifications"))), "Ajouté avec succès", "Ajouté avec succès", "Ajouté avec succès", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.ImageAndText01)});
             // 
             // Add_Supplier
             // 
+            this.Appearance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(615, 502);
+            this.ClientSize = new System.Drawing.Size(615, 442);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.edt_address);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.edt_phone);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.edt_name);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IconOptions.ShowIcon = false;
@@ -153,6 +167,7 @@ namespace DMM.AddPage
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ajouter un Fournisseur";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,13 +176,14 @@ namespace DMM.AddPage
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        public System.Windows.Forms.TextBox edt_name;
+        public System.Windows.Forms.TextBox edt_phone;
+        public System.Windows.Forms.TextBox edt_address;
+        public DevExpress.XtraEditors.SimpleButton btn_addclose;
+        public DevExpress.XtraEditors.SimpleButton btn_add;
+        private DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager toastNotificationsManager1;
     }
 }

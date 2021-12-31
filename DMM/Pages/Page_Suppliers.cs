@@ -21,7 +21,7 @@ namespace DMM.Pages
 
         // Load Data
 
-        private void LoadData ()
+        private void LoadData()
         {
             // Instantiate a new DBContext
             DMM.DBDMMEntities dbContext = new DMM.DBDMMEntities();
@@ -31,6 +31,20 @@ namespace DMM.Pages
                 // Bind data to control when loading complete
                 gridControl1.DataSource = dbContext.TB_Suppliers.Local.ToBindingList();
             }, System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext());
+        }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            DMM.AddPage.Add_Supplier add = new AddPage.Add_Supplier();
+            add.id = 0;
+            add.btn_add.Text = "Ajouter";
+            add.btn_addclose.Text = "Ajouter+Fermé";
+            add.Show();
+        }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }
