@@ -142,7 +142,8 @@ namespace DMM.AddPage
             // 
             this.toastNotificationsManager1.ApplicationId = "1f97f2dd-6818-4cc6-b95e-1e88f8893d99";
             this.toastNotificationsManager1.Notifications.AddRange(new DevExpress.XtraBars.ToastNotifications.IToastNotificationProperties[] {
-            new DevExpress.XtraBars.ToastNotifications.ToastNotification("c5735894-7960-49f3-a6b9-8a4d4ab688fd", ((System.Drawing.Image)(resources.GetObject("toastNotificationsManager1.Notifications"))), "Ajouté avec succès", "Ajouté avec succès", "Ajouté avec succès", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.ImageAndText01)});
+            new DevExpress.XtraBars.ToastNotifications.ToastNotification("c5735894-7960-49f3-a6b9-8a4d4ab688fd", ((System.Drawing.Image)(resources.GetObject("toastNotificationsManager1.Notifications"))), "Ajouté avec succès", "Ajouté avec succès", "Ajouté avec succès", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.ImageAndText01),
+            new DevExpress.XtraBars.ToastNotifications.ToastNotification("2119f7a4-b0f2-4ee8-9aea-c107924c374b", ((System.Drawing.Image)(resources.GetObject("toastNotificationsManager1.Notifications1"))), "Les données ont été modifiées avec succès", "Les données ont été modifiées avec succès", "Les données ont été modifiées avec succès", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.ImageAndText01)});
             // 
             // Add_Supplier
             // 

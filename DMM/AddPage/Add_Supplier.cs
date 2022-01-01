@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity.Migrations;
 
 namespace DMM.AddPage
 {
@@ -36,11 +37,16 @@ namespace DMM.AddPage
             }
             else
             {
-                // Check if Add or Edit
+                // Check if Add or Edit Data
                 if (id == 0)
+                {
                     AddData();
+                    ClearData();
+                }
                 else
+                {
                     EditData();
+                }
 
                 // Update Data
                 page.LoadData();
@@ -75,7 +81,27 @@ namespace DMM.AddPage
         //Edit Data
         private void EditData()
         {
+            try
+            {
+                db = new DBDMMEntities();
+                tbAdd = new TB_Suppliers
+                {
+                    ID = id,
+                    FullName = edt_name.Text,
+                    Phone = edt_phone.Text,
+                    Address = edt_address.Text,
+                    DateT = DateTime.Now
+                };
 
+                db.Set<TB_Suppliers>().AddOrUpdate(tbAdd);
+                db.SaveChanges();
+                toastNotificationsManager1.ShowNotification("2119f7a4-b0f2-4ee8-9aea-c107924c374b");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
 
@@ -83,7 +109,6 @@ namespace DMM.AddPage
         private void btn_add_Click(object sender, EventArgs e)
         {
             Add();
-            ClearData();
         }
 
         private void btn_addclose_Click(object sender, EventArgs e)

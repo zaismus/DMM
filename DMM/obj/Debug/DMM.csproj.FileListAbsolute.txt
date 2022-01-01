@@ -278,7 +278,6 @@ C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\de\DevExpress.Office.
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\es\DevExpress.Office.v20.2.Core.resources.dll
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\ja\DevExpress.Office.v20.2.Core.resources.dll
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\ru\DevExpress.Office.v20.2.Core.resources.dll
-C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.csprojAssemblyReference.cache
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.AddPage.Add_Supplier.resources
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.AddPage.Log_Supplier.resources
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.Main.resources
@@ -295,3 +294,4 @@ C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\EntityFramework.dll
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\EntityFramework.xml
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.csprojAssemblyReference.cache

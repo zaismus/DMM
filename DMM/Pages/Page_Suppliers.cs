@@ -13,6 +13,11 @@ namespace DMM.Pages
 {
     public partial class Page_Suppliers : DevExpress.XtraEditors.XtraUserControl
     {
+        // Define Database, Table & var
+        DBDMMEntities db;
+        TB_Suppliers tbAdd;
+        int id;
+
         public Page_Suppliers()
         {
             InitializeComponent();
@@ -46,6 +51,39 @@ namespace DMM.Pages
         private void btn_update_Click(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        private void btn_edit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                id = Convert.ToInt32(gridView1.GetFocusedRowCellValue("ID"));
+
+                if (id > 0)
+                {
+                    db = new DBDMMEntities();
+                    tbAdd = db.TB_Suppliers.Where(x => x.ID == id).FirstOrDefault();
+                    DMM.AddPage.Add_Supplier add = new AddPage.Add_Supplier();
+                    add.id = id;
+                    add.btn_add.Text = "Éditer";
+                    add.btn_addclose.Text = "Éditer+Fermé";
+                    add.edt_name.Text = tbAdd.FullName.ToString();
+                    add.edt_phone.Text = tbAdd.Phone;
+                    add.edt_address.Text = tbAdd.Address;
+                    add.page = this;
+                    add.Show();
+
+                }
+                else
+                {
+                    MessageBox.Show("Il n'y a pas de données à modifier");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

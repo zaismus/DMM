@@ -31,7 +31,7 @@ namespace DMM.Pages
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_edit = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_update = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
@@ -52,7 +52,7 @@ namespace DMM.Pages
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.simpleButton6);
-            this.panel1.Controls.Add(this.simpleButton5);
+            this.panel1.Controls.Add(this.btn_edit);
             this.panel1.Controls.Add(this.simpleButton4);
             this.panel1.Controls.Add(this.btn_update);
             this.panel1.Controls.Add(this.simpleButton2);
@@ -76,18 +76,19 @@ namespace DMM.Pages
             this.simpleButton6.TabIndex = 5;
             this.simpleButton6.Text = "Supprimé";
             // 
-            // simpleButton5
+            // btn_edit
             // 
-            this.simpleButton5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.simpleButton5.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton5.Appearance.Options.UseFont = true;
-            this.simpleButton5.ImageOptions.Image = global::DMM.Properties.Resources.edit_32x32;
-            this.simpleButton5.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton5.Location = new System.Drawing.Point(307, 14);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(140, 80);
-            this.simpleButton5.TabIndex = 4;
-            this.simpleButton5.Text = "Modifie";
+            this.btn_edit.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_edit.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_edit.Appearance.Options.UseFont = true;
+            this.btn_edit.ImageOptions.Image = global::DMM.Properties.Resources.edit_32x32;
+            this.btn_edit.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btn_edit.Location = new System.Drawing.Point(307, 14);
+            this.btn_edit.Name = "btn_edit";
+            this.btn_edit.Size = new System.Drawing.Size(140, 80);
+            this.btn_edit.TabIndex = 4;
+            this.btn_edit.Text = "Éditer";
+            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
             // simpleButton4
             // 
@@ -228,7 +229,7 @@ namespace DMM.Pages
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.SimpleButton simpleButton6;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
+        private DevExpress.XtraEditors.SimpleButton btn_edit;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton btn_update;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
