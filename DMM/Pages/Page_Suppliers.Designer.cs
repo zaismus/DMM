@@ -30,11 +30,11 @@ namespace DMM.Pages
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_delete = new DevExpress.XtraEditors.SimpleButton();
             this.btn_edit = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_update = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_print = new DevExpress.XtraEditors.SimpleButton();
             this.btn_add = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -51,11 +51,11 @@ namespace DMM.Pages
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.simpleButton6);
+            this.panel1.Controls.Add(this.btn_delete);
             this.panel1.Controls.Add(this.btn_edit);
             this.panel1.Controls.Add(this.simpleButton4);
             this.panel1.Controls.Add(this.btn_update);
-            this.panel1.Controls.Add(this.simpleButton2);
+            this.panel1.Controls.Add(this.btn_print);
             this.panel1.Controls.Add(this.btn_add);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 391);
@@ -63,18 +63,19 @@ namespace DMM.Pages
             this.panel1.Size = new System.Drawing.Size(979, 109);
             this.panel1.TabIndex = 0;
             // 
-            // simpleButton6
+            // btn_delete
             // 
-            this.simpleButton6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.simpleButton6.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton6.Appearance.Options.UseFont = true;
-            this.simpleButton6.ImageOptions.Image = global::DMM.Properties.Resources.deletesheetcells_32x32;
-            this.simpleButton6.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton6.Location = new System.Drawing.Point(161, 14);
-            this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(140, 80);
-            this.simpleButton6.TabIndex = 5;
-            this.simpleButton6.Text = "Supprimé";
+            this.btn_delete.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_delete.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_delete.Appearance.Options.UseFont = true;
+            this.btn_delete.ImageOptions.Image = global::DMM.Properties.Resources.deletesheetcells_32x32;
+            this.btn_delete.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btn_delete.Location = new System.Drawing.Point(161, 14);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(140, 80);
+            this.btn_delete.TabIndex = 5;
+            this.btn_delete.Text = "Supprimé";
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_edit
             // 
@@ -117,18 +118,19 @@ namespace DMM.Pages
             this.btn_update.Text = "Mise à jour";
             this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
-            // simpleButton2
+            // btn_print
             // 
-            this.simpleButton2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.ImageOptions.Image = global::DMM.Properties.Resources.printer_32x32;
-            this.simpleButton2.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton2.Location = new System.Drawing.Point(453, 14);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(140, 80);
-            this.simpleButton2.TabIndex = 1;
-            this.simpleButton2.Text = "Imprimé";
+            this.btn_print.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_print.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_print.Appearance.Options.UseFont = true;
+            this.btn_print.ImageOptions.Image = global::DMM.Properties.Resources.printer_32x32;
+            this.btn_print.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btn_print.Location = new System.Drawing.Point(453, 14);
+            this.btn_print.Name = "btn_print";
+            this.btn_print.Size = new System.Drawing.Size(140, 80);
+            this.btn_print.TabIndex = 1;
+            this.btn_print.Text = "Imprimé";
+            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
             // 
             // btn_add
             // 
@@ -228,11 +230,11 @@ namespace DMM.Pages
         private DevExpress.XtraEditors.SimpleButton btn_add;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton6;
+        private DevExpress.XtraEditors.SimpleButton btn_delete;
         private DevExpress.XtraEditors.SimpleButton btn_edit;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton btn_update;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton btn_print;
         private DevExpress.XtraGrid.Columns.GridColumn colFullName;
         private DevExpress.XtraGrid.Columns.GridColumn colPaymentSuppliers;
         private DevExpress.XtraGrid.Columns.GridColumn colPhone;

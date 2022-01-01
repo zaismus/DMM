@@ -85,5 +85,41 @@ namespace DMM.Pages
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            var rs = MessageBox.Show("Êtes-vous sûr de supprimer ces données, les données ne peuvent pas être restaurées", "Supprimé", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (rs == DialogResult.Yes)
+            {
+                try
+                {
+                    id = Convert.ToInt32(gridView1.GetFocusedRowCellValue("ID"));
+
+                    if (id > 0)
+                    {
+                        db = new DBDMMEntities();
+                        tbAdd = db.TB_Suppliers.Where(x => x.ID == id).FirstOrDefault();
+                        db.Entry(tbAdd).State = System.Data.Entity.EntityState.Deleted;
+                        db.SaveChanges();
+                        LoadData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Il n'y a pas de données à supprimé");
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void btn_print_Click(object sender, EventArgs e)
+        {
+            gridControl1.ShowPrintPreview();
+        }
     }
 }
