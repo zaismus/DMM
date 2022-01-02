@@ -295,3 +295,9 @@ C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\EntityFramework.SqlSe
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\EntityFramework.xml
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.csprojAssemblyReference.cache
+D:\ZM\C# Project\DMM\DMM\bin\Debug\EntityFramework.dll
+D:\ZM\C# Project\DMM\DMM\bin\Debug\EntityFramework.SqlServer.dll
+D:\ZM\C# Project\DMM\DMM\bin\Debug\EntityFramework.xml
+D:\ZM\C# Project\DMM\DMM\bin\Debug\EntityFramework.SqlServer.xml
+D:\ZM\C# Project\DMM\DMM\obj\Debug\DMM.AddPage.Add_Supplier.resources
+D:\ZM\C# Project\DMM\DMM\obj\Debug\DMM.AddPage.Log_Supplier.resources

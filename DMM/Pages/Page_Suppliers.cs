@@ -121,5 +121,31 @@ namespace DMM.Pages
         {
             gridControl1.ShowPrintPreview();
         }
+
+        private void btn_log_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                id = Convert.ToInt32(gridView1.GetFocusedRowCellValue("ID"));
+
+                if (id > 0)
+                {
+                    db = new DBDMMEntities();
+                    tbAdd = db.TB_Suppliers.Where(x => x.ID == id).FirstOrDefault();
+                    DMM.AddPage.Log_Supplier add = new AddPage.Log_Supplier();
+                    add.txt_name.Text = id.ToString() + " : " +tbAdd.FullName.ToString();
+                    add.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Il n'y a pas de données à modifier");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

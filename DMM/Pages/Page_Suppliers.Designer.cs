@@ -32,7 +32,7 @@ namespace DMM.Pages
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_delete = new DevExpress.XtraEditors.SimpleButton();
             this.btn_edit = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_log = new DevExpress.XtraEditors.SimpleButton();
             this.btn_update = new DevExpress.XtraEditors.SimpleButton();
             this.btn_print = new DevExpress.XtraEditors.SimpleButton();
             this.btn_add = new DevExpress.XtraEditors.SimpleButton();
@@ -53,7 +53,7 @@ namespace DMM.Pages
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.btn_delete);
             this.panel1.Controls.Add(this.btn_edit);
-            this.panel1.Controls.Add(this.simpleButton4);
+            this.panel1.Controls.Add(this.btn_log);
             this.panel1.Controls.Add(this.btn_update);
             this.panel1.Controls.Add(this.btn_print);
             this.panel1.Controls.Add(this.btn_add);
@@ -65,7 +65,7 @@ namespace DMM.Pages
             // 
             // btn_delete
             // 
-            this.btn_delete.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_delete.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_delete.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.Appearance.Options.UseFont = true;
             this.btn_delete.ImageOptions.Image = global::DMM.Properties.Resources.deletesheetcells_32x32;
@@ -79,7 +79,7 @@ namespace DMM.Pages
             // 
             // btn_edit
             // 
-            this.btn_edit.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_edit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_edit.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_edit.Appearance.Options.UseFont = true;
             this.btn_edit.ImageOptions.Image = global::DMM.Properties.Resources.edit_32x32;
@@ -91,22 +91,23 @@ namespace DMM.Pages
             this.btn_edit.Text = "Éditer";
             this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
-            // simpleButton4
+            // btn_log
             // 
-            this.simpleButton4.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton4.Appearance.Options.UseFont = true;
-            this.simpleButton4.ImageOptions.Image = global::DMM.Properties.Resources.logical_32x32;
-            this.simpleButton4.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton4.Location = new System.Drawing.Point(745, 14);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(211, 80);
-            this.simpleButton4.TabIndex = 3;
-            this.simpleButton4.Text = "Afficher le journal";
+            this.btn_log.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_log.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_log.Appearance.Options.UseFont = true;
+            this.btn_log.ImageOptions.Image = global::DMM.Properties.Resources.logical_32x32;
+            this.btn_log.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btn_log.Location = new System.Drawing.Point(745, 14);
+            this.btn_log.Name = "btn_log";
+            this.btn_log.Size = new System.Drawing.Size(211, 80);
+            this.btn_log.TabIndex = 3;
+            this.btn_log.Text = "Afficher le journal";
+            this.btn_log.Click += new System.EventHandler(this.btn_log_Click);
             // 
             // btn_update
             // 
-            this.btn_update.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_update.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_update.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_update.Appearance.Options.UseFont = true;
             this.btn_update.ImageOptions.Image = global::DMM.Properties.Resources.refreshpivottable_32x32;
@@ -120,7 +121,7 @@ namespace DMM.Pages
             // 
             // btn_print
             // 
-            this.btn_print.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_print.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_print.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_print.Appearance.Options.UseFont = true;
             this.btn_print.ImageOptions.Image = global::DMM.Properties.Resources.printer_32x32;
@@ -134,7 +135,7 @@ namespace DMM.Pages
             // 
             // btn_add
             // 
-            this.btn_add.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_add.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_add.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_add.Appearance.Options.UseFont = true;
             this.btn_add.ImageOptions.Image = global::DMM.Properties.Resources.add_32x321;
@@ -232,7 +233,7 @@ namespace DMM.Pages
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.SimpleButton btn_delete;
         private DevExpress.XtraEditors.SimpleButton btn_edit;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton btn_log;
         private DevExpress.XtraEditors.SimpleButton btn_update;
         private DevExpress.XtraEditors.SimpleButton btn_print;
         private DevExpress.XtraGrid.Columns.GridColumn colFullName;
