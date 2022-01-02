@@ -30,6 +30,7 @@ namespace DMM.AddPage
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txt_id = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -38,6 +39,8 @@ namespace DMM.AddPage
             this.panel2 = new System.Windows.Forms.Panel();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colPayment = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDateT1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
@@ -47,6 +50,9 @@ namespace DMM.AddPage
             this.panel3 = new System.Windows.Forms.Panel();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colFullName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDebit = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDateT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
@@ -66,6 +72,7 @@ namespace DMM.AddPage
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txt_id);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -77,6 +84,19 @@ namespace DMM.AddPage
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1078, 100);
             this.panel1.TabIndex = 0;
+            // 
+            // txt_id
+            // 
+            this.txt_id.AutoSize = true;
+            this.txt_id.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txt_id.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_id.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_id.Location = new System.Drawing.Point(81, 13);
+            this.txt_id.Name = "txt_id";
+            this.txt_id.Size = new System.Drawing.Size(22, 23);
+            this.txt_id.TabIndex = 14;
+            this.txt_id.Text = "0";
+            this.txt_id.Visible = false;
             // 
             // label6
             // 
@@ -162,6 +182,7 @@ namespace DMM.AddPage
             // 
             // gridControl2
             // 
+            this.gridControl2.DataSource = typeof(DMM.PaymentSupplier);
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl2.Location = new System.Drawing.Point(0, 36);
             this.gridControl2.MainView = this.gridView2;
@@ -173,9 +194,30 @@ namespace DMM.AddPage
             // 
             // gridView2
             // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colPayment,
+            this.colDateT1});
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // colPayment
+            // 
+            this.colPayment.Caption = "Paiement";
+            this.colPayment.FieldName = "Payment";
+            this.colPayment.Name = "colPayment";
+            this.colPayment.OptionsColumn.AllowEdit = false;
+            this.colPayment.Visible = true;
+            this.colPayment.VisibleIndex = 0;
+            // 
+            // colDateT1
+            // 
+            this.colDateT1.Caption = "Date";
+            this.colDateT1.FieldName = "DateT";
+            this.colDateT1.Name = "colDateT1";
+            this.colDateT1.OptionsColumn.AllowEdit = false;
+            this.colDateT1.Visible = true;
+            this.colDateT1.VisibleIndex = 1;
             // 
             // panel5
             // 
@@ -268,6 +310,7 @@ namespace DMM.AddPage
             // 
             // gridControl1
             // 
+            this.gridControl1.DataSource = typeof(DMM.Debit_Suppliers);
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.Location = new System.Drawing.Point(0, 36);
             this.gridControl1.MainView = this.gridView1;
@@ -279,9 +322,40 @@ namespace DMM.AddPage
             // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colFullName,
+            this.colDebit,
+            this.colDateT});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colFullName
+            // 
+            this.colFullName.Caption = "Détails";
+            this.colFullName.FieldName = "FullName";
+            this.colFullName.Name = "colFullName";
+            this.colFullName.OptionsColumn.AllowEdit = false;
+            this.colFullName.Visible = true;
+            this.colFullName.VisibleIndex = 0;
+            // 
+            // colDebit
+            // 
+            this.colDebit.Caption = "Montant";
+            this.colDebit.FieldName = "Debit";
+            this.colDebit.Name = "colDebit";
+            this.colDebit.OptionsColumn.AllowEdit = false;
+            this.colDebit.Visible = true;
+            this.colDebit.VisibleIndex = 1;
+            // 
+            // colDateT
+            // 
+            this.colDateT.Caption = "Date";
+            this.colDateT.FieldName = "DateT";
+            this.colDateT.Name = "colDateT";
+            this.colDateT.OptionsColumn.AllowEdit = false;
+            this.colDateT.Visible = true;
+            this.colDateT.VisibleIndex = 2;
             // 
             // panel4
             // 
@@ -375,7 +449,9 @@ namespace DMM.AddPage
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registre des Fournisseurs";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.Log_Supplier_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
@@ -414,5 +490,11 @@ namespace DMM.AddPage
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label txt_name;
+        private DevExpress.XtraGrid.Columns.GridColumn colPayment;
+        private DevExpress.XtraGrid.Columns.GridColumn colDateT1;
+        private DevExpress.XtraGrid.Columns.GridColumn colFullName;
+        private DevExpress.XtraGrid.Columns.GridColumn colDebit;
+        private DevExpress.XtraGrid.Columns.GridColumn colDateT;
+        public System.Windows.Forms.Label txt_id;
     }
 }

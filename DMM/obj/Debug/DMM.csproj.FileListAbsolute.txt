@@ -294,7 +294,6 @@ C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\EntityFramework.dll
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\EntityFramework.xml
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.csprojAssemblyReference.cache
 D:\ZM\C# Project\DMM\DMM\bin\Debug\EntityFramework.dll
 D:\ZM\C# Project\DMM\DMM\bin\Debug\EntityFramework.SqlServer.dll
 D:\ZM\C# Project\DMM\DMM\bin\Debug\EntityFramework.xml
