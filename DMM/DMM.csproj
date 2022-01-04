@@ -65,6 +65,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddPage\Add_DebitSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPage\Add_DebitSupplier.Designer.cs">
+      <DependentUpon>Add_DebitSupplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddPage\Add_Supplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     <Compile Include="TB_Suppliers.cs">
       <DependentUpon>MDMM.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddPage\Add_DebitSupplier.resx">
+      <DependentUpon>Add_DebitSupplier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddPage\Add_Supplier.resx">
       <DependentUpon>Add_Supplier.cs</DependentUpon>
     </EmbeddedResource>
