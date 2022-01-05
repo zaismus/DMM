@@ -55,9 +55,9 @@ namespace DMM.AddPage
             this.colDateT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_editdebit = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_adddebit = new DevExpress.XtraEditors.SimpleButton();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -361,9 +361,9 @@ namespace DMM.AddPage
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel4.Controls.Add(this.simpleButton6);
-            this.panel4.Controls.Add(this.simpleButton5);
+            this.panel4.Controls.Add(this.btn_editdebit);
             this.panel4.Controls.Add(this.simpleButton2);
-            this.panel4.Controls.Add(this.simpleButton1);
+            this.panel4.Controls.Add(this.btn_adddebit);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 296);
             this.panel4.Name = "panel4";
@@ -383,18 +383,18 @@ namespace DMM.AddPage
             this.simpleButton6.TabIndex = 9;
             this.simpleButton6.Text = "Supprimé";
             // 
-            // simpleButton5
+            // btn_editdebit
             // 
-            this.simpleButton5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.simpleButton5.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton5.Appearance.Options.UseFont = true;
-            this.simpleButton5.ImageOptions.Image = global::DMM.Properties.Resources.edit_32x32;
-            this.simpleButton5.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton5.Location = new System.Drawing.Point(274, 13);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(120, 75);
-            this.simpleButton5.TabIndex = 8;
-            this.simpleButton5.Text = "Modifie";
+            this.btn_editdebit.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_editdebit.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_editdebit.Appearance.Options.UseFont = true;
+            this.btn_editdebit.ImageOptions.Image = global::DMM.Properties.Resources.edit_32x32;
+            this.btn_editdebit.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btn_editdebit.Location = new System.Drawing.Point(274, 13);
+            this.btn_editdebit.Name = "btn_editdebit";
+            this.btn_editdebit.Size = new System.Drawing.Size(120, 75);
+            this.btn_editdebit.TabIndex = 8;
+            this.btn_editdebit.Text = "Modifie";
             // 
             // simpleButton2
             // 
@@ -409,18 +409,19 @@ namespace DMM.AddPage
             this.simpleButton2.TabIndex = 7;
             this.simpleButton2.Text = "Imprimé";
             // 
-            // simpleButton1
+            // btn_adddebit
             // 
-            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.ImageOptions.Image = global::DMM.Properties.Resources.add_32x321;
-            this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(14, 13);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(120, 75);
-            this.simpleButton1.TabIndex = 6;
-            this.simpleButton1.Text = "Ajouter";
+            this.btn_adddebit.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_adddebit.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_adddebit.Appearance.Options.UseFont = true;
+            this.btn_adddebit.ImageOptions.Image = global::DMM.Properties.Resources.add_32x321;
+            this.btn_adddebit.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btn_adddebit.Location = new System.Drawing.Point(14, 13);
+            this.btn_adddebit.Name = "btn_adddebit";
+            this.btn_adddebit.Size = new System.Drawing.Size(120, 75);
+            this.btn_adddebit.TabIndex = 6;
+            this.btn_adddebit.Text = "Ajouter";
+            this.btn_adddebit.Click += new System.EventHandler(this.btn_adddebit_Click);
             // 
             // label1
             // 
@@ -472,9 +473,9 @@ namespace DMM.AddPage
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.SimpleButton simpleButton6;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
+        private DevExpress.XtraEditors.SimpleButton btn_editdebit;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btn_adddebit;
         private DevExpress.XtraGrid.GridControl gridControl2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private System.Windows.Forms.Panel panel5;

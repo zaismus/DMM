@@ -133,7 +133,7 @@ namespace DMM.Pages
                     db = new DBDMMEntities();
                     tbAdd = db.TB_Suppliers.Where(x => x.ID == id).FirstOrDefault();
                     DMM.AddPage.Log_Supplier add = new AddPage.Log_Supplier();
-                    add.txt_name.Text = id.ToString() + " : " +tbAdd.FullName.ToString();
+                    add.txt_name.Text = id.ToString() + " : " + tbAdd.FullName.ToString(); ;
                     add.txt_id.Text = id.ToString();
                     add.Show();
                 }

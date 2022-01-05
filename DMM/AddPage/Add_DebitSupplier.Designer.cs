@@ -120,10 +120,9 @@ namespace DMM.AddPage
             // 
             // edt_name
             // 
-            this.edt_name.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edt_name.Location = new System.Drawing.Point(37, 80);
+            this.edt_name.Location = new System.Drawing.Point(36, 80);
             this.edt_name.Name = "edt_name";
-            this.edt_name.Size = new System.Drawing.Size(537, 144);
+            this.edt_name.Size = new System.Drawing.Size(538, 172);
             this.edt_name.TabIndex = 7;
             this.edt_name.Text = "";
             // 
@@ -147,6 +146,7 @@ namespace DMM.AddPage
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ajouter un Fournisseur";
+            this.TopMost = true;
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).EndInit();
             this.ResumeLayout(false);

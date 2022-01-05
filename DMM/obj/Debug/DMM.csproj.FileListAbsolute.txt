@@ -300,3 +300,12 @@ D:\ZM\C# Project\DMM\DMM\bin\Debug\EntityFramework.xml
 D:\ZM\C# Project\DMM\DMM\bin\Debug\EntityFramework.SqlServer.xml
 D:\ZM\C# Project\DMM\DMM\obj\Debug\DMM.AddPage.Add_Supplier.resources
 D:\ZM\C# Project\DMM\DMM\obj\Debug\DMM.AddPage.Log_Supplier.resources
+C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.AddPage.Add_DebitSupplier.resources
+C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\DevExpress.Images.v20.2.dll
+C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\DevExpress.XtraRichEdit.v20.2.dll
+C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\DevExpress.XtraRichEdit.v20.2.xml
+C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\de\DevExpress.XtraRichEdit.v20.2.resources.dll
+C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\es\DevExpress.XtraRichEdit.v20.2.resources.dll
+C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\ja\DevExpress.XtraRichEdit.v20.2.resources.dll
+C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\ru\DevExpress.XtraRichEdit.v20.2.resources.dll
+C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.csprojAssemblyReference.cache
