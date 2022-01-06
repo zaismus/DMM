@@ -395,6 +395,7 @@ namespace DMM.AddPage
             this.btn_editdebit.Size = new System.Drawing.Size(120, 75);
             this.btn_editdebit.TabIndex = 8;
             this.btn_editdebit.Text = "Modifie";
+            this.btn_editdebit.Click += new System.EventHandler(this.btn_editdebit_Click);
             // 
             // simpleButton2
             // 

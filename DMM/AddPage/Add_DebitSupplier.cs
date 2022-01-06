@@ -91,7 +91,7 @@ namespace DMM.AddPage
                 {
                     ID = id,
                     FullName = edt_name.Text,
-                    Debit = Convert.ToDouble(edt_debit),
+                    Debit = Convert.ToDouble(edt_debit.Text),
                     SupplierName = SupplierName,
                     ID_Supplier = SupplierID,
                     DateT = DateTime.Now
