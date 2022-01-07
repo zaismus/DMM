@@ -17,6 +17,7 @@ namespace DMM.AddPage
 
         // Define Database, Table & var
         DBDMMEntities db;
+        Debit_Suppliers tbAdd;
         int id;
 
 
@@ -103,6 +104,46 @@ namespace DMM.AddPage
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btn_deletedebit_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                id = Convert.ToInt32(gridView1.GetFocusedRowCellValue("ID"));
+
+                if (id > 0)
+                {
+
+                    var rs = MessageBox.Show("Êtes-vous sûr de supprimer ces données, les données ne peuvent pas être restaurées", "Supprimé", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (rs == DialogResult.Yes)
+                    {
+                        db = new DBDMMEntities();
+                        tbAdd = db.Debit_Suppliers.Where(x => x.ID == id).FirstOrDefault();
+                        db.Entry(tbAdd).State = System.Data.Entity.EntityState.Deleted;
+                        db.SaveChanges();
+                        LoadDebitData();
+                    }
+
+
+                }
+                else
+                {
+                    MessageBox.Show("Il n'y a pas de données à supprimer");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void btn_printdebit_Click(object sender, EventArgs e)
+        {
+            gridControl1.ShowPrintPreview();
         }
     }
 }
