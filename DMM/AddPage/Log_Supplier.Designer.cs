@@ -42,10 +42,10 @@ namespace DMM.AddPage
             this.colPayment = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDateT1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_deletePayment = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_editPayment = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_printPayment = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_addPayment = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -222,67 +222,71 @@ namespace DMM.AddPage
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panel5.Controls.Add(this.simpleButton3);
-            this.panel5.Controls.Add(this.simpleButton4);
-            this.panel5.Controls.Add(this.simpleButton7);
-            this.panel5.Controls.Add(this.simpleButton8);
+            this.panel5.Controls.Add(this.btn_deletePayment);
+            this.panel5.Controls.Add(this.btn_editPayment);
+            this.panel5.Controls.Add(this.btn_printPayment);
+            this.panel5.Controls.Add(this.btn_addPayment);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel5.Location = new System.Drawing.Point(0, 296);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(540, 100);
             this.panel5.TabIndex = 5;
             // 
-            // simpleButton3
+            // btn_deletePayment
             // 
-            this.simpleButton3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.ImageOptions.Image = global::DMM.Properties.Resources.deletesheetcells_32x32;
-            this.simpleButton3.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton3.Location = new System.Drawing.Point(145, 13);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(120, 75);
-            this.simpleButton3.TabIndex = 9;
-            this.simpleButton3.Text = "Supprimé";
+            this.btn_deletePayment.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_deletePayment.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_deletePayment.Appearance.Options.UseFont = true;
+            this.btn_deletePayment.ImageOptions.Image = global::DMM.Properties.Resources.deletesheetcells_32x32;
+            this.btn_deletePayment.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btn_deletePayment.Location = new System.Drawing.Point(145, 13);
+            this.btn_deletePayment.Name = "btn_deletePayment";
+            this.btn_deletePayment.Size = new System.Drawing.Size(120, 75);
+            this.btn_deletePayment.TabIndex = 9;
+            this.btn_deletePayment.Text = "Supprimé";
+            this.btn_deletePayment.Click += new System.EventHandler(this.btn_deletePayment_Click);
             // 
-            // simpleButton4
+            // btn_editPayment
             // 
-            this.simpleButton4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton4.Appearance.Options.UseFont = true;
-            this.simpleButton4.ImageOptions.Image = global::DMM.Properties.Resources.edit_32x32;
-            this.simpleButton4.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton4.Location = new System.Drawing.Point(275, 13);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(120, 75);
-            this.simpleButton4.TabIndex = 8;
-            this.simpleButton4.Text = "Modifie";
+            this.btn_editPayment.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_editPayment.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_editPayment.Appearance.Options.UseFont = true;
+            this.btn_editPayment.ImageOptions.Image = global::DMM.Properties.Resources.edit_32x32;
+            this.btn_editPayment.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btn_editPayment.Location = new System.Drawing.Point(275, 13);
+            this.btn_editPayment.Name = "btn_editPayment";
+            this.btn_editPayment.Size = new System.Drawing.Size(120, 75);
+            this.btn_editPayment.TabIndex = 8;
+            this.btn_editPayment.Text = "Modifie";
+            this.btn_editPayment.Click += new System.EventHandler(this.btn_editPayment_Click);
             // 
-            // simpleButton7
+            // btn_printPayment
             // 
-            this.simpleButton7.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.simpleButton7.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton7.Appearance.Options.UseFont = true;
-            this.simpleButton7.ImageOptions.Image = global::DMM.Properties.Resources.printer_32x32;
-            this.simpleButton7.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton7.Location = new System.Drawing.Point(405, 13);
-            this.simpleButton7.Name = "simpleButton7";
-            this.simpleButton7.Size = new System.Drawing.Size(120, 75);
-            this.simpleButton7.TabIndex = 7;
-            this.simpleButton7.Text = "Imprimé";
+            this.btn_printPayment.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_printPayment.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_printPayment.Appearance.Options.UseFont = true;
+            this.btn_printPayment.ImageOptions.Image = global::DMM.Properties.Resources.printer_32x32;
+            this.btn_printPayment.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btn_printPayment.Location = new System.Drawing.Point(405, 13);
+            this.btn_printPayment.Name = "btn_printPayment";
+            this.btn_printPayment.Size = new System.Drawing.Size(120, 75);
+            this.btn_printPayment.TabIndex = 7;
+            this.btn_printPayment.Text = "Imprimé";
+            this.btn_printPayment.Click += new System.EventHandler(this.btn_printPayment_Click);
             // 
-            // simpleButton8
+            // btn_addPayment
             // 
-            this.simpleButton8.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.simpleButton8.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton8.Appearance.Options.UseFont = true;
-            this.simpleButton8.ImageOptions.Image = global::DMM.Properties.Resources.add_32x321;
-            this.simpleButton8.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton8.Location = new System.Drawing.Point(15, 13);
-            this.simpleButton8.Name = "simpleButton8";
-            this.simpleButton8.Size = new System.Drawing.Size(120, 75);
-            this.simpleButton8.TabIndex = 6;
-            this.simpleButton8.Text = "Ajouter";
+            this.btn_addPayment.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_addPayment.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_addPayment.Appearance.Options.UseFont = true;
+            this.btn_addPayment.ImageOptions.Image = global::DMM.Properties.Resources.add_32x321;
+            this.btn_addPayment.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btn_addPayment.Location = new System.Drawing.Point(15, 13);
+            this.btn_addPayment.Name = "btn_addPayment";
+            this.btn_addPayment.Size = new System.Drawing.Size(120, 75);
+            this.btn_addPayment.TabIndex = 6;
+            this.btn_addPayment.Text = "Ajouter";
+            this.btn_addPayment.Click += new System.EventHandler(this.btn_addPayment_Click);
             // 
             // label2
             // 
@@ -482,10 +486,10 @@ namespace DMM.AddPage
         private DevExpress.XtraGrid.GridControl gridControl2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private System.Windows.Forms.Panel panel5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton7;
-        private DevExpress.XtraEditors.SimpleButton simpleButton8;
+        private DevExpress.XtraEditors.SimpleButton btn_deletePayment;
+        private DevExpress.XtraEditors.SimpleButton btn_editPayment;
+        private DevExpress.XtraEditors.SimpleButton btn_printPayment;
+        private DevExpress.XtraEditors.SimpleButton btn_addPayment;
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;

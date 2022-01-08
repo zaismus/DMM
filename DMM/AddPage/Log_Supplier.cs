@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 
 namespace DMM.AddPage
 {
@@ -18,8 +19,9 @@ namespace DMM.AddPage
         // Define Database, Table & var
         DBDMMEntities db;
         Debit_Suppliers tbAdd;
+        PaymentSupplier tbPayment;
         int id;
-
+        int PaymentValue;
 
         public Log_Supplier()
         {
@@ -126,8 +128,6 @@ namespace DMM.AddPage
                         db.SaveChanges();
                         LoadDebitData();
                     }
-
-
                 }
                 else
                 {
@@ -144,6 +144,159 @@ namespace DMM.AddPage
         private void btn_printdebit_Click(object sender, EventArgs e)
         {
             gridControl1.ShowPrintPreview();
+        }
+
+        private void btn_addPayment_Click(object sender, EventArgs e)
+        {
+            #region XtraInputBox
+            /*
+            TextEdit textEdit = new TextEdit();
+            textEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric ;
+
+            XtraInputBoxArgs args = new XtraInputBoxArgs();
+            args.Caption = "Paiement";
+            args.Prompt = "Entrez le Montant";
+            args.DefaultButtonIndex = 0;
+            args.DefaultResponse = "0";
+            args.Editor = textEdit;
+
+            var PaymentValue = XtraInputBox.Show(args);
+            if (PaymentValue != null)
+            {
+                MessageBox.Show(PaymentValue.ToString());
+            }
+            else
+                MessageBox.Show("Cancel");
+            */
+            #endregion
+
+            if (int.TryParse(XtraInputBox.Show("Entre le Montant", "Paiement", "0"), out PaymentValue) && PaymentValue != 0)
+            {
+                AddPayment();
+                LoadPaymentData();
+                MessageBox.Show("Paiement effectué avec succès");
+            }
+            else
+            {
+                MessageBox.Show("Saisissez le montant à payer");
+            }
+        }
+
+        private void AddPayment()
+        {
+            try
+            {
+                db = new DBDMMEntities();
+                var tbpayment = new PaymentSupplier
+                {
+                    Payment = Convert.ToDouble(PaymentValue),
+                    SupplierName = txt_name.Text.Substring(txt_name.Text.IndexOf(":") + 2),
+                    ID_Supplier = Convert.ToInt32(txt_name.Text.Substring(0, txt_name.Text.IndexOf(":") - 1)),
+                    DateT = DateTime.Now
+                };
+
+                db.Entry(tbpayment).State = System.Data.Entity.EntityState.Added;
+                db.SaveChanges();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btn_editPayment_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                id = Convert.ToInt32(gridView2.GetFocusedRowCellValue("ID"));
+
+                if (id > 0)
+                {
+                    if (int.TryParse(XtraInputBox.Show("Entre le Montant", "Paiement", gridView2.GetFocusedRowCellValue("Payment").ToString()), out PaymentValue) && PaymentValue != 0)
+                    {
+                        EditPayment();
+                        LoadPaymentData();
+                        MessageBox.Show("Paiement modifié avec succès");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Saisissez le montant à payer");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Il n'y a pas de données à modifier");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void EditPayment()
+        {
+            try
+            {
+                db = new DBDMMEntities();
+                var tbpayment = new PaymentSupplier
+                {
+                    ID = id,
+                    Payment = Convert.ToDouble(PaymentValue),
+                    SupplierName = txt_name.Text.Substring(txt_name.Text.IndexOf(":") + 2),
+                    ID_Supplier = Convert.ToInt32(txt_name.Text.Substring(0, txt_name.Text.IndexOf(":") - 1)),
+                    DateT = DateTime.Now
+                };
+
+                db.Set<PaymentSupplier>().AddOrUpdate(tbpayment);
+                db.SaveChanges();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btn_deletePayment_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                id = Convert.ToInt32(gridView2.GetFocusedRowCellValue("ID"));
+
+                if (id > 0)
+                {
+
+                    var rs = MessageBox.Show("Êtes-vous sûr de supprimer ces données, les données ne peuvent pas être restaurées", "Supprimé", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (rs == DialogResult.Yes)
+                    {
+                        db = new DBDMMEntities();
+                        tbPayment = db.PaymentSuppliers.Where(x => x.ID == id).FirstOrDefault();
+                        db.Entry(tbPayment).State = System.Data.Entity.EntityState.Deleted;
+                        db.SaveChanges();
+                        LoadPaymentData();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Il n'y a pas de données à supprimer");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void btn_printPayment_Click(object sender, EventArgs e)
+        {
+            gridControl2.ShowPrintPreview();
         }
     }
 }
