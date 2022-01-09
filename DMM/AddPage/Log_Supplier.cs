@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
+using System.Threading;
 
 namespace DMM.AddPage
 {
@@ -324,6 +325,71 @@ namespace DMM.AddPage
         private void Log_Supplier_Activated(object sender, EventArgs e)
         {
             DebitPaymentCal();
+        }
+
+        private async void btn_logclear_Click(object sender, EventArgs e)
+        {
+            var rs = MessageBox.Show("Êtes-vous sûr de supprimer ces données, les données ne peuvent pas être restaurées", "Supprimé", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (rs == DialogResult.Yes)
+            {
+                // Loading .....
+                this.Text = "Veuillez patienter pendant le nettoyage du registre";
+                Thread.Sleep(2000);
+
+                // Clear Debit
+                this.Text = "nettoyage du registre des dettes";
+                await Task.Run(() => LogDebitClearData());
+
+                // Clear Payment
+                this.Text = "Nettoyage de l'historique des paiements";
+                await Task.Run(() => LogPaymentClearData());
+
+                this.Text = "Registre de Fournisseur";
+
+                LoadDebitData();
+                LoadPaymentData();
+            }
+        }
+
+        private void LogDebitClearData()
+        {
+            try
+            {
+                var ID_Supplier = Convert.ToInt32(txt_name.Text.Substring(0, txt_name.Text.IndexOf(":") - 1));
+                db = new DBDMMEntities();
+                var Debit_List = db.Debit_Suppliers.Where(x => x.ID_Supplier == ID_Supplier).ToList();
+
+                foreach(var Debitlist in Debit_List)
+                {
+                    db.Entry(Debitlist).State = System.Data.Entity.EntityState.Deleted;
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void LogPaymentClearData()
+        {
+            try
+            {
+                var ID_Supplier = Convert.ToInt32(txt_name.Text.Substring(0, txt_name.Text.IndexOf(":") - 1));
+                db = new DBDMMEntities();
+                var Payment_List = db.PaymentSuppliers.Where(x => x.ID_Supplier == ID_Supplier).ToList();
+
+                foreach (var Paymenttlist in Payment_List)
+                {
+                    db.Entry(Paymenttlist).State = System.Data.Entity.EntityState.Deleted;
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -34,7 +34,7 @@ namespace DMM.AddPage
             this.txt_paymentrs = new System.Windows.Forms.Label();
             this.txt_payment = new System.Windows.Forms.Label();
             this.txt_debit = new System.Windows.Forms.Label();
-            this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_logclear = new DevExpress.XtraEditors.SimpleButton();
             this.txt_name = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
@@ -76,7 +76,7 @@ namespace DMM.AddPage
             this.panel1.Controls.Add(this.txt_paymentrs);
             this.panel1.Controls.Add(this.txt_payment);
             this.panel1.Controls.Add(this.txt_debit);
-            this.panel1.Controls.Add(this.simpleButton9);
+            this.panel1.Controls.Add(this.btn_logclear);
             this.panel1.Controls.Add(this.txt_name);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.ForeColor = System.Drawing.Color.LightGray;
@@ -140,20 +140,21 @@ namespace DMM.AddPage
             this.txt_debit.Text = "Dettes";
             this.txt_debit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // simpleButton9
+            // btn_logclear
             // 
-            this.simpleButton9.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.simpleButton9.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton9.Appearance.ForeColor = System.Drawing.Color.Maroon;
-            this.simpleButton9.Appearance.Options.UseFont = true;
-            this.simpleButton9.Appearance.Options.UseForeColor = true;
-            this.simpleButton9.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton9.ImageOptions.SvgImage = global::DMM.Properties.Resources.cleartablestyle;
-            this.simpleButton9.Location = new System.Drawing.Point(878, 13);
-            this.simpleButton9.Name = "simpleButton9";
-            this.simpleButton9.Size = new System.Drawing.Size(188, 75);
-            this.simpleButton9.TabIndex = 10;
-            this.simpleButton9.Text = "Nettoyage du Registre";
+            this.btn_logclear.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btn_logclear.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_logclear.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.btn_logclear.Appearance.Options.UseFont = true;
+            this.btn_logclear.Appearance.Options.UseForeColor = true;
+            this.btn_logclear.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btn_logclear.ImageOptions.SvgImage = global::DMM.Properties.Resources.cleartablestyle;
+            this.btn_logclear.Location = new System.Drawing.Point(878, 13);
+            this.btn_logclear.Name = "btn_logclear";
+            this.btn_logclear.Size = new System.Drawing.Size(188, 75);
+            this.btn_logclear.TabIndex = 10;
+            this.btn_logclear.Text = "Nettoyage du Registre";
+            this.btn_logclear.Click += new System.EventHandler(this.btn_logclear_Click);
             // 
             // txt_name
             // 
@@ -494,7 +495,7 @@ namespace DMM.AddPage
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton9;
+        private DevExpress.XtraEditors.SimpleButton btn_logclear;
         private System.Windows.Forms.Label txt_paymentrs;
         private System.Windows.Forms.Label txt_payment;
         private System.Windows.Forms.Label txt_debit;
