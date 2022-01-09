@@ -22,6 +22,9 @@ namespace DMM.AddPage
         PaymentSupplier tbPayment;
         int id;
         int PaymentValue;
+        double Debit;
+        double Payment;
+        double Paymentrs;
 
         public Log_Supplier()
         {
@@ -297,6 +300,30 @@ namespace DMM.AddPage
         private void btn_printPayment_Click(object sender, EventArgs e)
         {
             gridControl2.ShowPrintPreview();
+        }
+
+        private void DebitPaymentCal()
+        {
+            try
+            {
+                var ID_Supplier = Convert.ToInt32(txt_name.Text.Substring(0, txt_name.Text.IndexOf(":") - 1));
+                db = new DBDMMEntities();
+                Debit = (double) db.Debit_Suppliers.Where(x => x.ID_Supplier == ID_Supplier).Select(x => x.Debit).ToArray().Sum();
+                Payment = (double)db.PaymentSuppliers.Where(x => x.ID_Supplier == ID_Supplier).Select(x => x.Payment).ToArray().Sum();
+                Paymentrs = Debit - Payment;
+                txt_debit.Text = "Dettes : " + Debit.ToString();
+                txt_payment.Text = "payé : " + Payment.ToString();
+                txt_paymentrs.Text = "Résiduel : " + Paymentrs.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Log_Supplier_Activated(object sender, EventArgs e)
+        {
+            DebitPaymentCal();
         }
     }
 }

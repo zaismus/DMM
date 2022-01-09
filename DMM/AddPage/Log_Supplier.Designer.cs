@@ -31,9 +31,9 @@ namespace DMM.AddPage
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.txt_id = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.txt_paymentrs = new System.Windows.Forms.Label();
+            this.txt_payment = new System.Windows.Forms.Label();
+            this.txt_debit = new System.Windows.Forms.Label();
             this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
             this.txt_name = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -73,9 +73,9 @@ namespace DMM.AddPage
             // panel1
             // 
             this.panel1.Controls.Add(this.txt_id);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.txt_paymentrs);
+            this.panel1.Controls.Add(this.txt_payment);
+            this.panel1.Controls.Add(this.txt_debit);
             this.panel1.Controls.Add(this.simpleButton9);
             this.panel1.Controls.Add(this.txt_name);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -98,47 +98,47 @@ namespace DMM.AddPage
             this.txt_id.Text = "0";
             this.txt_id.Visible = false;
             // 
-            // label6
+            // txt_paymentrs
             // 
-            this.label6.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label6.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(475, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(137, 100);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Résiduel";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txt_paymentrs.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txt_paymentrs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_paymentrs.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txt_paymentrs.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_paymentrs.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_paymentrs.Location = new System.Drawing.Point(475, 0);
+            this.txt_paymentrs.Name = "txt_paymentrs";
+            this.txt_paymentrs.Size = new System.Drawing.Size(137, 100);
+            this.txt_paymentrs.TabIndex = 13;
+            this.txt_paymentrs.Text = "Résiduel";
+            this.txt_paymentrs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // txt_payment
             // 
-            this.label5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label5.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(338, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(137, 100);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Paiement";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txt_payment.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.txt_payment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_payment.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txt_payment.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_payment.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_payment.Location = new System.Drawing.Point(338, 0);
+            this.txt_payment.Name = "txt_payment";
+            this.txt_payment.Size = new System.Drawing.Size(137, 100);
+            this.txt_payment.TabIndex = 12;
+            this.txt_payment.Text = "Paiement";
+            this.txt_payment.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // txt_debit
             // 
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label4.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(201, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(137, 100);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Dettes";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txt_debit.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txt_debit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_debit.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txt_debit.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_debit.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_debit.Location = new System.Drawing.Point(201, 0);
+            this.txt_debit.Name = "txt_debit";
+            this.txt_debit.Size = new System.Drawing.Size(137, 100);
+            this.txt_debit.TabIndex = 11;
+            this.txt_debit.Text = "Dettes";
+            this.txt_debit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // simpleButton9
             // 
@@ -457,6 +457,7 @@ namespace DMM.AddPage
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registre des Fournisseurs";
             this.TopMost = true;
+            this.Activated += new System.EventHandler(this.Log_Supplier_Activated);
             this.Load += new System.EventHandler(this.Log_Supplier_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -494,9 +495,9 @@ namespace DMM.AddPage
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.SimpleButton simpleButton9;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label txt_paymentrs;
+        private System.Windows.Forms.Label txt_payment;
+        private System.Windows.Forms.Label txt_debit;
         public System.Windows.Forms.Label txt_name;
         private DevExpress.XtraGrid.Columns.GridColumn colPayment;
         private DevExpress.XtraGrid.Columns.GridColumn colDateT1;
