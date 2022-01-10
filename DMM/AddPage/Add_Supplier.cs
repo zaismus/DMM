@@ -64,6 +64,7 @@ namespace DMM.AddPage
                     FullName = edt_name.Text,
                     Phone = edt_phone.Text,
                     Address = edt_address.Text,
+                    Debit = 0,
                     DateT = DateTime.Now
                 };
 

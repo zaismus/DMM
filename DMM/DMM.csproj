@@ -88,6 +88,7 @@
     <Compile Include="AddPage\Log_Supplier.Designer.cs">
       <DependentUpon>Log_Supplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="BL\UPDATE.cs" />
     <Compile Include="Debit_Suppliers.cs">
       <DependentUpon>MDMM.tt</DependentUpon>
     </Compile>
@@ -180,9 +181,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BL\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\home_32x32.png" />
   </ItemGroup>

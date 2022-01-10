@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using DMM.Pages;
-
+using System.Threading.Tasks;
 
 namespace DMM
 {
@@ -51,6 +51,12 @@ namespace DMM
         private void btn_customer_Click(object sender, EventArgs e)
         {
             toastNotificationsManager1.ShowNotification("108a16f0-77e1-4285-959d-4d8f03105277");
+        }
+
+        private async void Main_Activated(object sender, EventArgs e)
+        {
+            BL.UPDATE uPDATE = new BL.UPDATE();
+            await Task.Run(() => uPDATE.SupplierDataUpdate()) ;
         }
     }
 }

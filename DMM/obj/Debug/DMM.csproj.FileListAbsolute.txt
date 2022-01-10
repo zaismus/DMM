@@ -181,7 +181,6 @@ D:\ZM\C# Project\DMM\DMM\bin\Debug\de\DevExpress.Office.v20.2.Core.resources.dll
 D:\ZM\C# Project\DMM\DMM\bin\Debug\es\DevExpress.Office.v20.2.Core.resources.dll
 D:\ZM\C# Project\DMM\DMM\bin\Debug\ja\DevExpress.Office.v20.2.Core.resources.dll
 D:\ZM\C# Project\DMM\DMM\bin\Debug\ru\DevExpress.Office.v20.2.Core.resources.dll
-D:\ZM\C# Project\DMM\DMM\obj\Debug\DMM.csprojAssemblyReference.cache
 D:\ZM\C# Project\DMM\DMM\obj\Debug\DMM.Main.resources
 D:\ZM\C# Project\DMM\DMM\obj\Debug\DMM.Pages.Page_Home.resources
 D:\ZM\C# Project\DMM\DMM\obj\Debug\DMM.Pages.Page_Suppliers.resources
