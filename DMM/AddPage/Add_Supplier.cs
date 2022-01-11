@@ -85,13 +85,15 @@ namespace DMM.AddPage
             try
             {
                 db = new DBDMMEntities();
+                double getdebit = (double)db.TB_Suppliers.Where(x => x.ID == id).Select(x => x.Debit).FirstOrDefault();
                 tbAdd = new TB_Suppliers
                 {
                     ID = id,
                     FullName = edt_name.Text,
                     Phone = edt_phone.Text,
                     Address = edt_address.Text,
-                    DateT = DateTime.Now
+                    DateT = DateTime.Now,
+                    Debit = getdebit,
                 };
 
                 db.Set<TB_Suppliers>().AddOrUpdate(tbAdd);

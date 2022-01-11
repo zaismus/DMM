@@ -192,6 +192,7 @@ namespace DMM.AddPage
             this.gridControl2.TabIndex = 6;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
+            this.gridControl2.DataSourceChanged += new System.EventHandler(this.gridControl2_DataSourceChanged);
             // 
             // gridView2
             // 
@@ -324,6 +325,7 @@ namespace DMM.AddPage
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.DataSourceChanged += new System.EventHandler(this.gridControl1_DataSourceChanged);
             // 
             // gridView1
             // 
@@ -458,7 +460,6 @@ namespace DMM.AddPage
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registre des Fournisseurs";
             this.TopMost = true;
-            this.Activated += new System.EventHandler(this.Log_Supplier_Activated);
             this.Load += new System.EventHandler(this.Log_Supplier_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

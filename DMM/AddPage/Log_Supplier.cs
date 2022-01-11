@@ -322,11 +322,6 @@ namespace DMM.AddPage
             }
         }
 
-        private void Log_Supplier_Activated(object sender, EventArgs e)
-        {
-            DebitPaymentCal();
-        }
-
         private async void btn_logclear_Click(object sender, EventArgs e)
         {
             var rs = MessageBox.Show("Êtes-vous sûr de supprimer ces données, les données ne peuvent pas être restaurées", "Supprimé", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -390,6 +385,16 @@ namespace DMM.AddPage
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void gridControl2_DataSourceChanged(object sender, EventArgs e)
+        {
+            DebitPaymentCal();
+        }
+
+        private void gridControl1_DataSourceChanged(object sender, EventArgs e)
+        {
+            DebitPaymentCal();
         }
     }
 }
