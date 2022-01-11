@@ -76,5 +76,80 @@
       <End Role="TB_Suppliers" EntitySet="TB_Suppliers" />
       <End Role="PaymentSuppliers" EntitySet="PaymentSuppliers" />
     </AssociationSet>
+    <EntitySet Name="Debit_Customers" EntityType="DBDMMModel.Debit_Customers" />
+    <EntitySet Name="PaymentCustomers" EntityType="DBDMMModel.PaymentCustomer" />
+    <EntitySet Name="TB_Customers" EntityType="DBDMMModel.TB_Customers" />
+    <AssociationSet Name="FK_Debit_Customers_TB_Customers" Association="DBDMMModel.FK_Debit_Customers_TB_Customers">
+      <End Role="TB_Customers" EntitySet="TB_Customers" />
+      <End Role="Debit_Customers" EntitySet="Debit_Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PaymentCustomers_TB_Customers" Association="DBDMMModel.FK_PaymentCustomers_TB_Customers">
+      <End Role="TB_Customers" EntitySet="TB_Customers" />
+      <End Role="PaymentCustomer" EntitySet="PaymentCustomers" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Debit_Customers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Supplier" Type="Int32" />
+    <Property Name="SupplierName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FullName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Debit" Type="Double" />
+    <Property Name="DateT" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_Customers" Relationship="DBDMMModel.FK_Debit_Customers_TB_Customers" FromRole="Debit_Customers" ToRole="TB_Customers" />
+  </EntityType>
+  <EntityType Name="PaymentCustomer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Supplier" Type="Int32" />
+    <Property Name="SupplierName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Payment" Type="Double" />
+    <Property Name="DateT" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_Customers" Relationship="DBDMMModel.FK_PaymentCustomers_TB_Customers" FromRole="PaymentCustomer" ToRole="TB_Customers" />
+  </EntityType>
+  <EntityType Name="TB_Customers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Debit" Type="Double" />
+    <Property Name="DateT" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Debit_Customers" Relationship="DBDMMModel.FK_Debit_Customers_TB_Customers" FromRole="TB_Customers" ToRole="Debit_Customers" />
+    <NavigationProperty Name="PaymentCustomers" Relationship="DBDMMModel.FK_PaymentCustomers_TB_Customers" FromRole="TB_Customers" ToRole="PaymentCustomer" />
+  </EntityType>
+  <Association Name="FK_Debit_Customers_TB_Customers">
+    <End Type="DBDMMModel.TB_Customers" Role="TB_Customers" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DBDMMModel.Debit_Customers" Role="Debit_Customers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Customers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Debit_Customers">
+        <PropertyRef Name="ID_Supplier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PaymentCustomers_TB_Customers">
+    <End Type="DBDMMModel.TB_Customers" Role="TB_Customers" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DBDMMModel.PaymentCustomer" Role="PaymentCustomer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Customers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PaymentCustomer">
+        <PropertyRef Name="ID_Supplier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

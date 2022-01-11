@@ -36,5 +36,40 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Debit_Customers">
+      <EntityTypeMapping TypeName="DBDMMModel.Debit_Customers">
+        <MappingFragment StoreEntitySet="Debit_Customers">
+          <ScalarProperty Name="DateT" ColumnName="DateT" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="ID_Supplier" ColumnName="ID_Supplier" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentCustomers">
+      <EntityTypeMapping TypeName="DBDMMModel.PaymentCustomer">
+        <MappingFragment StoreEntitySet="PaymentCustomers">
+          <ScalarProperty Name="DateT" ColumnName="DateT" />
+          <ScalarProperty Name="Payment" ColumnName="Payment" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="ID_Supplier" ColumnName="ID_Supplier" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Customers">
+      <EntityTypeMapping TypeName="DBDMMModel.TB_Customers">
+        <MappingFragment StoreEntitySet="TB_Customers">
+          <ScalarProperty Name="DateT" ColumnName="DateT" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

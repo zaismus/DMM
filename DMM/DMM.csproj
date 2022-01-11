@@ -89,6 +89,9 @@
       <DependentUpon>Log_Supplier.cs</DependentUpon>
     </Compile>
     <Compile Include="BL\UPDATE.cs" />
+    <Compile Include="Debit_Customers.cs">
+      <DependentUpon>MDMM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Debit_Suppliers.cs">
       <DependentUpon>MDMM.tt</DependentUpon>
     </Compile>
@@ -125,11 +128,17 @@
     <Compile Include="Pages\Page_Suppliers.Designer.cs">
       <DependentUpon>Page_Suppliers.cs</DependentUpon>
     </Compile>
+    <Compile Include="PaymentCustomer.cs">
+      <DependentUpon>MDMM.tt</DependentUpon>
+    </Compile>
     <Compile Include="PaymentSupplier.cs">
       <DependentUpon>MDMM.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TB_Customers.cs">
+      <DependentUpon>MDMM.tt</DependentUpon>
+    </Compile>
     <Compile Include="TB_Suppliers.cs">
       <DependentUpon>MDMM.tt</DependentUpon>
     </Compile>
