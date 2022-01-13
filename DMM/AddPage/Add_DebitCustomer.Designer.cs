@@ -1,7 +1,7 @@
 ﻿
 namespace DMM.AddPage
 {
-    partial class Add_DebitSupplier
+    partial class Add_DebitCustomer
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace DMM.AddPage
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_DebitSupplier));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_DebitCustomer));
             this.label1 = new System.Windows.Forms.Label();
             this.edt_debit = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -126,7 +126,7 @@ namespace DMM.AddPage
             this.edt_name.TabIndex = 1;
             this.edt_name.Text = "";
             // 
-            // Add_DebitSupplier
+            // Add_DebitCustomer
             // 
             this.Appearance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Appearance.Options.UseBackColor = true;
@@ -142,10 +142,10 @@ namespace DMM.AddPage
             this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Add_DebitSupplier";
+            this.Name = "Add_DebitCustomer";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ajouter un Fournisseur";
+            this.Text = "Ajouter un Client";
             this.TopMost = true;
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).EndInit();

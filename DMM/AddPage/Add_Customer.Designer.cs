@@ -1,7 +1,7 @@
 ﻿
 namespace DMM.AddPage
 {
-    partial class Add_DebitSupplier
+    partial class Add_Customer
     {
         /// <summary>
         /// Required designer variable.
@@ -30,15 +30,17 @@ namespace DMM.AddPage
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_DebitSupplier));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_Customer));
             this.label1 = new System.Windows.Forms.Label();
-            this.edt_debit = new System.Windows.Forms.TextBox();
+            this.edt_name = new System.Windows.Forms.TextBox();
+            this.edt_phone = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.edt_address = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_addclose = new DevExpress.XtraEditors.SimpleButton();
             this.btn_add = new DevExpress.XtraEditors.SimpleButton();
             this.toastNotificationsManager1 = new DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager(this.components);
-            this.edt_name = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).BeginInit();
             this.SuspendLayout();
@@ -49,28 +51,53 @@ namespace DMM.AddPage
             this.label1.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(31, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 36);
+            this.label1.Size = new System.Drawing.Size(150, 36);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Ajouts des dettes";
+            this.label1.Text = "Nom de Clients";
             // 
-            // edt_debit
+            // edt_name
             // 
-            this.edt_debit.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edt_debit.Location = new System.Drawing.Point(36, 294);
-            this.edt_debit.Name = "edt_debit";
-            this.edt_debit.Size = new System.Drawing.Size(538, 37);
-            this.edt_debit.TabIndex = 2;
-            this.edt_debit.Text = "0";
+            this.edt_name.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edt_name.Location = new System.Drawing.Point(36, 80);
+            this.edt_name.Name = "edt_name";
+            this.edt_name.Size = new System.Drawing.Size(538, 37);
+            this.edt_name.TabIndex = 1;
+            // 
+            // edt_phone
+            // 
+            this.edt_phone.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edt_phone.Location = new System.Drawing.Point(36, 188);
+            this.edt_phone.Name = "edt_phone";
+            this.edt_phone.Size = new System.Drawing.Size(538, 37);
+            this.edt_phone.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(31, 255);
+            this.label2.Location = new System.Drawing.Point(31, 149);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(179, 36);
+            this.label2.Size = new System.Drawing.Size(210, 36);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Le Montant Totale";
+            this.label2.Text = "Numéro de Téléphone";
+            // 
+            // edt_address
+            // 
+            this.edt_address.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edt_address.Location = new System.Drawing.Point(37, 291);
+            this.edt_address.Name = "edt_address";
+            this.edt_address.Size = new System.Drawing.Size(538, 37);
+            this.edt_address.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(31, 252);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 36);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Adresse";
             // 
             // panel1
             // 
@@ -118,35 +145,28 @@ namespace DMM.AddPage
             new DevExpress.XtraBars.ToastNotifications.ToastNotification("c5735894-7960-49f3-a6b9-8a4d4ab688fd", ((System.Drawing.Image)(resources.GetObject("toastNotificationsManager1.Notifications"))), "Ajouté avec succès", "Ajouté avec succès", "Ajouté avec succès", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.ImageAndText01),
             new DevExpress.XtraBars.ToastNotifications.ToastNotification("2119f7a4-b0f2-4ee8-9aea-c107924c374b", ((System.Drawing.Image)(resources.GetObject("toastNotificationsManager1.Notifications1"))), "Les données ont été modifiées avec succès", "Les données ont été modifiées avec succès", "Les données ont été modifiées avec succès", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.ImageAndText01)});
             // 
-            // edt_name
-            // 
-            this.edt_name.Location = new System.Drawing.Point(36, 80);
-            this.edt_name.Name = "edt_name";
-            this.edt_name.Size = new System.Drawing.Size(538, 172);
-            this.edt_name.TabIndex = 1;
-            this.edt_name.Text = "";
-            // 
-            // Add_DebitSupplier
+            // Add_Customer
             // 
             this.Appearance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(615, 442);
-            this.Controls.Add(this.edt_name);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.edt_debit);
+            this.Controls.Add(this.edt_address);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.edt_phone);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.edt_name);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Add_DebitSupplier";
+            this.Name = "Add_Customer";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ajouter un Fournisseur";
-            this.TopMost = true;
+            this.Text = "Ajouter un Client";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).EndInit();
             this.ResumeLayout(false);
@@ -158,11 +178,13 @@ namespace DMM.AddPage
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
-        public System.Windows.Forms.TextBox edt_debit;
+        public System.Windows.Forms.TextBox edt_name;
+        public System.Windows.Forms.TextBox edt_phone;
+        public System.Windows.Forms.TextBox edt_address;
         public DevExpress.XtraEditors.SimpleButton btn_addclose;
         public DevExpress.XtraEditors.SimpleButton btn_add;
         private DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager toastNotificationsManager1;
-        public System.Windows.Forms.RichTextBox edt_name;
     }
 }

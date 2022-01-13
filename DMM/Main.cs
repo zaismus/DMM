@@ -50,13 +50,15 @@ namespace DMM
 
         private void btn_customer_Click(object sender, EventArgs e)
         {
-            toastNotificationsManager1.ShowNotification("108a16f0-77e1-4285-959d-4d8f03105277");
+            Page_Customers page_Customers = new Page_Customers();
+            LoadPage(page_Customers);
         }
 
         private async void Main_Activated(object sender, EventArgs e)
         {
             BL.UPDATE uPDATE = new BL.UPDATE();
-            await Task.Run(() => uPDATE.SupplierDataUpdate()) ;
+            await Task.Run(() => uPDATE.SupplierDataUpdate());
+            await Task.Run(() => uPDATE.CustomerDataUpdate());
         }
     }
 }

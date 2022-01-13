@@ -307,7 +307,6 @@ C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\de\DevExpress.XtraRic
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\es\DevExpress.XtraRichEdit.v20.2.resources.dll
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\ja\DevExpress.XtraRichEdit.v20.2.resources.dll
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\ru\DevExpress.XtraRichEdit.v20.2.resources.dll
-C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.csprojAssemblyReference.cache
 D:\ZM\C# Project\DMM\DMM\bin\Debug\DevExpress.Images.v20.2.dll
 D:\ZM\C# Project\DMM\DMM\bin\Debug\DevExpress.XtraRichEdit.v20.2.dll
 D:\ZM\C# Project\DMM\DMM\bin\Debug\DevExpress.XtraRichEdit.v20.2.xml
@@ -316,3 +315,8 @@ D:\ZM\C# Project\DMM\DMM\bin\Debug\es\DevExpress.XtraRichEdit.v20.2.resources.dl
 D:\ZM\C# Project\DMM\DMM\bin\Debug\ja\DevExpress.XtraRichEdit.v20.2.resources.dll
 D:\ZM\C# Project\DMM\DMM\bin\Debug\ru\DevExpress.XtraRichEdit.v20.2.resources.dll
 D:\ZM\C# Project\DMM\DMM\obj\Debug\DMM.AddPage.Add_DebitSupplier.resources
+C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.AddPage.Add_DebitCustomer.resources
+C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.AddPage.Add_Customer.resources
+C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.AddPage.Log_Customer.resources
+C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.Pages.Page_Customers.resources
+C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.csprojAssemblyReference.cache

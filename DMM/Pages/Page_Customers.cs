@@ -11,46 +11,46 @@ using System.Data.Entity;
 
 namespace DMM.Pages
 {
-    public partial class Page_Suppliers : DevExpress.XtraEditors.XtraUserControl
+    public partial class Page_Customers : DevExpress.XtraEditors.XtraUserControl
     {
         // Define Database, Table & var
         DBDMMEntities db;
-        TB_Suppliers tbAdd;
+        TB_Customers tbAdd;
         int id;
 
-        public Page_Suppliers()
+        public Page_Customers()
         {
             InitializeComponent();
-            LoadDataSuppliers();
+            LoadDataCustomers();
         }
 
         // Load Data
 
-        public void LoadDataSuppliers()
+        public void LoadDataCustomers()
         {
             // Instantiate a new DBContext
             DMM.DBDMMEntities dbContext = new DMM.DBDMMEntities();
             // Call the LoadAsync method to asynchronously get the data for the given DbSet from the database.
-            dbContext.TB_Suppliers.LoadAsync().ContinueWith(loadTask =>
+            dbContext.TB_Customers.LoadAsync().ContinueWith(loadTask =>
             {
                 // Bind data to control when loading complete
-                gridControl1.DataSource = dbContext.TB_Suppliers.Local.ToBindingList();
+                gridControl1.DataSource = dbContext.TB_Customers.Local.ToBindingList();
             }, System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext());
         }
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            DMM.AddPage.Add_Supplier add = new AddPage.Add_Supplier();
-            add.ids = 0;
+            DMM.AddPage.Add_Customer add = new AddPage.Add_Customer();
+            add.idc = 0;
             add.btn_add.Text = "Ajouter";
             add.btn_addclose.Text = "Ajouter+Fermé";
-            add.pageSuppliers = this;
+            add.pageCustomers = this;
             add.Show();
         }
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-            LoadDataSuppliers();
+            LoadDataCustomers();
         }
 
         private void btn_edit_Click(object sender, EventArgs e)
@@ -62,15 +62,15 @@ namespace DMM.Pages
                 if (id > 0)
                 {
                     db = new DBDMMEntities();
-                    tbAdd = db.TB_Suppliers.Where(x => x.ID == id).FirstOrDefault();
-                    DMM.AddPage.Add_Supplier add = new AddPage.Add_Supplier();
-                    add.ids = id;
+                    tbAdd = db.TB_Customers.Where(x => x.ID == id).FirstOrDefault();
+                    DMM.AddPage.Add_Customer add = new AddPage.Add_Customer();
+                    add.idc = id;
                     add.btn_add.Text = "Éditer";
                     add.btn_addclose.Text = "Éditer+Fermé";
                     add.edt_name.Text = tbAdd.FullName.ToString();
                     add.edt_phone.Text = tbAdd.Phone;
                     add.edt_address.Text = tbAdd.Address;
-                    add.pageSuppliers = this;
+                    add.pageCustomers = this;
                     add.Show();
 
                 }
@@ -99,10 +99,10 @@ namespace DMM.Pages
                     if (id > 0)
                     {
                         db = new DBDMMEntities();
-                        tbAdd = db.TB_Suppliers.Where(x => x.ID == id).FirstOrDefault();
+                        tbAdd = db.TB_Customers.Where(x => x.ID == id).FirstOrDefault();
                         db.Entry(tbAdd).State = System.Data.Entity.EntityState.Deleted;
                         db.SaveChanges();
-                        LoadDataSuppliers();
+                        LoadDataCustomers();
                     }
                     else
                     {
@@ -131,8 +131,8 @@ namespace DMM.Pages
                 if (id > 0)
                 {
                     db = new DBDMMEntities();
-                    tbAdd = db.TB_Suppliers.Where(x => x.ID == id).FirstOrDefault();
-                    DMM.AddPage.Log_Supplier add = new AddPage.Log_Supplier();
+                    tbAdd = db.TB_Customers.Where(x => x.ID == id).FirstOrDefault();
+                    DMM.AddPage.Log_Customer add = new AddPage.Log_Customer();
                     add.txt_name.Text = id.ToString() + " : " + tbAdd.FullName.ToString(); ;
                     add.txt_id.Text = id.ToString();
                     add.Show();

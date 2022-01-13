@@ -23,7 +23,7 @@ namespace DMM.AddPage
         // Define Database, Table, Page & Var
         DBDMMEntities db;
         Debit_Suppliers tbAdd;
-        public DMM.AddPage.Log_Supplier page;
+        public DMM.AddPage.Log_Supplier pageLogSupplier;
         public int id;
         public int SupplierID;
         public string SupplierName;
@@ -51,7 +51,7 @@ namespace DMM.AddPage
                 }
 
                 // Update Data
-                page.LoadDebitData();
+                pageLogSupplier.LoadDebitData();
             }
         }
 

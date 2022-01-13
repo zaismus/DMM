@@ -1,7 +1,7 @@
 ﻿
 namespace DMM.Pages
 {
-    partial class Page_Suppliers
+    partial class Page_Customers
     {
         /// <summary> 
         /// Required designer variable.
@@ -149,7 +149,7 @@ namespace DMM.Pages
             // 
             // gridControl1
             // 
-            this.gridControl1.DataSource = typeof(DMM.TB_Suppliers);
+            this.gridControl1.DataSource = typeof(DMM.TB_Customers);
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
@@ -172,7 +172,7 @@ namespace DMM.Pages
             // 
             // colFullName
             // 
-            this.colFullName.Caption = "Fournisseur";
+            this.colFullName.Caption = "Client";
             this.colFullName.FieldName = "FullName";
             this.colFullName.Name = "colFullName";
             this.colFullName.OptionsColumn.AllowEdit = false;
@@ -204,7 +204,7 @@ namespace DMM.Pages
             this.colDebit.Name = "colDebit";
             this.colDebit.OptionsColumn.AllowEdit = false;
             this.colDebit.Visible = true;
-            this.colDebit.VisibleIndex = 4;
+            this.colDebit.VisibleIndex = 3;
             // 
             // colDateT
             // 
@@ -213,15 +213,15 @@ namespace DMM.Pages
             this.colDateT.Name = "colDateT";
             this.colDateT.OptionsColumn.AllowEdit = false;
             this.colDateT.Visible = true;
-            this.colDateT.VisibleIndex = 3;
+            this.colDateT.VisibleIndex = 4;
             // 
-            // Page_Suppliers
+            // Page_Customers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.panel1);
-            this.Name = "Page_Suppliers";
+            this.Name = "Page_Customers";
             this.Size = new System.Drawing.Size(979, 500);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -244,7 +244,7 @@ namespace DMM.Pages
         private DevExpress.XtraGrid.Columns.GridColumn colFullName;
         private DevExpress.XtraGrid.Columns.GridColumn colPhone;
         private DevExpress.XtraGrid.Columns.GridColumn colAddress;
-        private DevExpress.XtraGrid.Columns.GridColumn colDateT;
         private DevExpress.XtraGrid.Columns.GridColumn colDebit;
+        private DevExpress.XtraGrid.Columns.GridColumn colDateT;
     }
 }

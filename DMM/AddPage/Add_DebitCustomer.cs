@@ -12,19 +12,21 @@ using System.Data.Entity.Migrations;
 
 namespace DMM.AddPage
 {
-    public partial class Add_Supplier : DevExpress.XtraEditors.XtraForm
+    public partial class Add_DebitCustomer : DevExpress.XtraEditors.XtraForm
     {
-        public Add_Supplier()
+        public Add_DebitCustomer()
         {
             InitializeComponent();
         }
 
 
-        // Define Database, Table, var & Page
+        // Define Database, Table, Page & Var
         DBDMMEntities db;
-        TB_Suppliers tbAdd;
-        public int ids;
-        public DMM.Pages.Page_Suppliers pageSuppliers;
+        Debit_Customers tbAdd;
+        public DMM.AddPage.Log_Customer pageLogCustomer;
+        public int id;
+        public int SupplierID;
+        public string SupplierName;
 
 
         // Function Add
@@ -38,7 +40,7 @@ namespace DMM.AddPage
             else
             {
                 // Check if Add or Edit Data
-                if (ids == 0)
+                if (id == 0)
                 {
                     AddData();
                     ClearData();
@@ -49,7 +51,7 @@ namespace DMM.AddPage
                 }
 
                 // Update Data
-                pageSuppliers.LoadDataSuppliers();
+                pageLogCustomer.LoadDebitData();
             }
         }
 
@@ -59,12 +61,12 @@ namespace DMM.AddPage
             try
             {
                 db = new DBDMMEntities();
-                tbAdd = new TB_Suppliers
+                tbAdd = new Debit_Customers
                 {
                     FullName = edt_name.Text,
-                    Phone = edt_phone.Text,
-                    Address = edt_address.Text,
-                    Debit = 0,
+                    Debit = Convert.ToDouble(edt_debit.Text),
+                    SupplierName = SupplierName,
+                    ID_Supplier = SupplierID,
                     DateT = DateTime.Now
                 };
 
@@ -85,18 +87,17 @@ namespace DMM.AddPage
             try
             {
                 db = new DBDMMEntities();
-                double getdebit = (double)db.TB_Suppliers.Where(x => x.ID == ids).Select(x => x.Debit).FirstOrDefault();
-                tbAdd = new TB_Suppliers
+                tbAdd = new Debit_Customers
                 {
-                    ID = ids,
+                    ID = id,
                     FullName = edt_name.Text,
-                    Phone = edt_phone.Text,
-                    Address = edt_address.Text,
-                    DateT = DateTime.Now,
-                    Debit = getdebit,
+                    Debit = Convert.ToDouble(edt_debit.Text),
+                    SupplierName = SupplierName,
+                    ID_Supplier = SupplierID,
+                    DateT = DateTime.Now
                 };
 
-                db.Set<TB_Suppliers>().AddOrUpdate(tbAdd);
+                db.Set<Debit_Customers>().AddOrUpdate(tbAdd);
                 db.SaveChanges();
                 toastNotificationsManager1.ShowNotification("2119f7a4-b0f2-4ee8-9aea-c107924c374b");
 
@@ -123,9 +124,8 @@ namespace DMM.AddPage
         // Clear Value
         private void ClearData()
         {
-            edt_address.Text =
-            edt_name.Text =
-            edt_phone.Text = "";
+            edt_name.Text = "";
+            edt_debit.Text = "0";
         }
     }
 }
