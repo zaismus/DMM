@@ -152,6 +152,12 @@
     <Compile Include="Pages\Page_Suppliers.Designer.cs">
       <DependentUpon>Page_Suppliers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ReportPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\ReportPage.Designer.cs">
+      <DependentUpon>ReportPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="PaymentCustomer.cs">
       <DependentUpon>MDMM.tt</DependentUpon>
     </Compile>
@@ -195,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Page_Suppliers.resx">
       <DependentUpon>Page_Suppliers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ReportPage.resx">
+      <DependentUpon>ReportPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -289,6 +298,8 @@
       <DependentUpon>MDMM.edmx</DependentUpon>
       <LastGenOutput>MDMM.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\boreport_32x32.png" />
+    <None Include="Resources\boreport2_32x32.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

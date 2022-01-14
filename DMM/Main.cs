@@ -60,5 +60,11 @@ namespace DMM
             await Task.Run(() => uPDATE.SupplierDataUpdate());
             await Task.Run(() => uPDATE.CustomerDataUpdate());
         }
+
+        private void btn_report_Click(object sender, EventArgs e)
+        {
+            ReportPage reportPage = new ReportPage();
+            LoadPage(reportPage);
+        }
     }
 }
