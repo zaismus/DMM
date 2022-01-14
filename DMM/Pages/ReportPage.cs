@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,13 @@ namespace DMM.Pages
         public ReportPage()
         {
             InitializeComponent();
+        }
+
+        private void btn_supplierReport_Click(object sender, EventArgs e)
+        {
+            DMM.Report.SupplierReport supplierReport = new Report.SupplierReport();
+            ReportPrintTool reportPrint = new ReportPrintTool(supplierReport);
+            reportPrint.ShowPreview();
         }
     }
 }

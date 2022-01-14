@@ -30,50 +30,51 @@ namespace DMM.Pages
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_logclear = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_supplierReport = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_CustomerReport = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.Controls.Add(this.simpleButton1);
-            this.panel1.Controls.Add(this.btn_logclear);
+            this.panel1.Controls.Add(this.btn_supplierReport);
+            this.panel1.Controls.Add(this.btn_CustomerReport);
             this.panel1.Location = new System.Drawing.Point(70, 91);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(833, 338);
             this.panel1.TabIndex = 0;
             // 
-            // simpleButton1
+            // btn_supplierReport
             // 
-            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.Maroon;
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Appearance.Options.UseForeColor = true;
-            this.simpleButton1.ImageOptions.Image = global::DMM.Properties.Resources.boreport_32x32;
-            this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(41, 132);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(299, 75);
-            this.simpleButton1.TabIndex = 12;
-            this.simpleButton1.Text = "Rapport des dettes Clients";
+            this.btn_supplierReport.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btn_supplierReport.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_supplierReport.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.btn_supplierReport.Appearance.Options.UseFont = true;
+            this.btn_supplierReport.Appearance.Options.UseForeColor = true;
+            this.btn_supplierReport.ImageOptions.Image = global::DMM.Properties.Resources.boreport2_32x321;
+            this.btn_supplierReport.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btn_supplierReport.Location = new System.Drawing.Point(41, 132);
+            this.btn_supplierReport.Name = "btn_supplierReport";
+            this.btn_supplierReport.Size = new System.Drawing.Size(299, 75);
+            this.btn_supplierReport.TabIndex = 12;
+            this.btn_supplierReport.Text = "Rapport des dettes Fournisseurs";
+            this.btn_supplierReport.Click += new System.EventHandler(this.btn_supplierReport_Click);
             // 
-            // btn_logclear
+            // btn_CustomerReport
             // 
-            this.btn_logclear.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btn_logclear.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_logclear.Appearance.ForeColor = System.Drawing.Color.Maroon;
-            this.btn_logclear.Appearance.Options.UseFont = true;
-            this.btn_logclear.Appearance.Options.UseForeColor = true;
-            this.btn_logclear.ImageOptions.Image = global::DMM.Properties.Resources.boreport2_32x32;
-            this.btn_logclear.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.btn_logclear.Location = new System.Drawing.Point(492, 132);
-            this.btn_logclear.Name = "btn_logclear";
-            this.btn_logclear.Size = new System.Drawing.Size(299, 75);
-            this.btn_logclear.TabIndex = 11;
-            this.btn_logclear.Text = "Rapport des dettes Fournisseurs";
+            this.btn_CustomerReport.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btn_CustomerReport.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CustomerReport.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.btn_CustomerReport.Appearance.Options.UseFont = true;
+            this.btn_CustomerReport.Appearance.Options.UseForeColor = true;
+            this.btn_CustomerReport.ImageOptions.Image = global::DMM.Properties.Resources.boreport_32x321;
+            this.btn_CustomerReport.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btn_CustomerReport.Location = new System.Drawing.Point(492, 132);
+            this.btn_CustomerReport.Name = "btn_CustomerReport";
+            this.btn_CustomerReport.Size = new System.Drawing.Size(299, 75);
+            this.btn_CustomerReport.TabIndex = 11;
+            this.btn_CustomerReport.Text = "Rapport des dettes Clients";
             // 
             // ReportPage
             // 
@@ -90,7 +91,7 @@ namespace DMM.Pages
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton btn_logclear;
+        private DevExpress.XtraEditors.SimpleButton btn_supplierReport;
+        private DevExpress.XtraEditors.SimpleButton btn_CustomerReport;
     }
 }
