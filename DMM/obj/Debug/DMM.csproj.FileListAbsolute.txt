@@ -319,7 +319,6 @@ C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.AddPage.Add_Debit
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.AddPage.Add_Customer.resources
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.AddPage.Log_Customer.resources
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.Pages.Page_Customers.resources
-C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.csprojAssemblyReference.cache
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.Pages.ReportPage.resources
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\DevExpress.Charts.v20.2.Core.dll
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\DevExpress.DataAccess.v20.2.dll
