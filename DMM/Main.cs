@@ -66,5 +66,11 @@ namespace DMM
             ReportPage reportPage = new ReportPage();
             LoadPage(reportPage);
         }
+
+        private void btn_analysis_Click(object sender, EventArgs e)
+        {
+            AnalysisPage analysisPage = new AnalysisPage();
+            LoadPage(analysisPage);
+        }
     }
 }

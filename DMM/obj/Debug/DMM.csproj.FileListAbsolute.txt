@@ -413,3 +413,6 @@ C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\es\DevExpress.Diagram
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\ja\DevExpress.Diagram.v20.2.Core.resources.dll
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\ru\DevExpress.Diagram.v20.2.Core.resources.dll
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.Report.SupplierReport.resources
+C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.Pages.AnalysisPage.resources
+C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\DevExpress.XtraCharts.v20.2.UI.dll
+C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\DevExpress.XtraCharts.v20.2.UI.xml

@@ -129,6 +129,7 @@ namespace DMM
             this.btn_analysis.Name = "btn_analysis";
             this.btn_analysis.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btn_analysis.Text = "Analysis";
+            this.btn_analysis.Click += new System.EventHandler(this.btn_analysis_Click);
             // 
             // btn_users
             // 
