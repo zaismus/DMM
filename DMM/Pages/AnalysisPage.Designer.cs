@@ -29,8 +29,6 @@ namespace DMM.Pages
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,8 +45,6 @@ namespace DMM.Pages
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -65,7 +61,7 @@ namespace DMM.Pages
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(15);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1031, 463);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1031, 556);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // panel3
@@ -176,19 +172,11 @@ namespace DMM.Pages
             // chartControl1
             // 
             this.chartControl1.DataSource = typeof(DMM.Debit_Customers);
-            xyDiagram1.AxisX.DateTimeScaleOptions.AggregateFunction = DevExpress.XtraCharts.AggregateFunction.Sum;
-            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
-            this.chartControl1.Diagram = xyDiagram1;
             this.chartControl1.Location = new System.Drawing.Point(30, 244);
             this.chartControl1.Margin = new System.Windows.Forms.Padding(15);
             this.chartControl1.Name = "chartControl1";
-            series1.ArgumentDataMember = "DateT";
-            series1.Name = "Series 1";
-            series1.ValueDataMembersSerializable = "Debit";
-            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1};
-            this.chartControl1.Size = new System.Drawing.Size(960, 200);
+            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
+            this.chartControl1.Size = new System.Drawing.Size(960, 283);
             this.chartControl1.TabIndex = 3;
             // 
             // AnalysisPage
@@ -199,13 +187,11 @@ namespace DMM.Pages
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "AnalysisPage";
-            this.Size = new System.Drawing.Size(1031, 463);
+            this.Size = new System.Drawing.Size(1031, 556);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             this.ResumeLayout(false);
 

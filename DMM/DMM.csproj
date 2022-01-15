@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v20.2" />
     <Reference Include="DevExpress.Charts.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.Desktop.v20.2" />
     <Reference Include="DevExpress.Data.v20.2" />
     <Reference Include="DevExpress.DataAccess.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -119,6 +120,11 @@
       <DependentUpon>Log_Supplier.cs</DependentUpon>
     </Compile>
     <Compile Include="BL\UPDATE.cs" />
+    <Compile Include="DBDMMDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBDMMDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Debit_Customers.cs">
       <DependentUpon>MDMM.tt</DependentUpon>
     </Compile>
@@ -251,6 +257,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>MDMM.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="DBDMMDataSet.xsc">
+      <DependentUpon>DBDMMDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DBDMMDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBDMMDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBDMMDataSet.xss">
+      <DependentUpon>DBDMMDataSet.xsd</DependentUpon>
+    </None>
     <None Include="MDMM.edmx.diagram">
       <DependentUpon>MDMM.edmx</DependentUpon>
     </None>
@@ -265,7 +282,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\home_32x32.png" />
   </ItemGroup>

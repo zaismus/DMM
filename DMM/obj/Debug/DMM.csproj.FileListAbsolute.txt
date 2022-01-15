@@ -415,3 +415,4 @@ C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.Report.SupplierRe
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.Pages.AnalysisPage.resources
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\DevExpress.XtraCharts.v20.2.UI.dll
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\DevExpress.XtraCharts.v20.2.UI.xml
+C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.csprojAssemblyReference.cache
