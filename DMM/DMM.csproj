@@ -101,6 +101,12 @@
     <Compile Include="AddPage\Add_Customer.Designer.cs">
       <DependentUpon>Add_Customer.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddPage\Add_Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPage\Add_Users.Designer.cs">
+      <DependentUpon>Add_Users.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddPage\Add_Supplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,12 @@
     <Compile Include="Pages\Page_Customers.Designer.cs">
       <DependentUpon>Page_Customers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Page_Users.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\Page_Users.Designer.cs">
+      <DependentUpon>Page_Users.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Page_Suppliers.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -202,6 +214,9 @@
     <Compile Include="TB_Suppliers.cs">
       <DependentUpon>MDMM.tt</DependentUpon>
     </Compile>
+    <Compile Include="TB_Users.cs">
+      <DependentUpon>MDMM.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddPage\Add_DebitCustomer.resx">
       <DependentUpon>Add_DebitCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddPage\Add_Customer.resx">
       <DependentUpon>Add_Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPage\Add_Users.resx">
+      <DependentUpon>Add_Users.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddPage\Add_Supplier.resx">
       <DependentUpon>Add_Supplier.cs</DependentUpon>
@@ -231,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Page_Customers.resx">
       <DependentUpon>Page_Customers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Page_Users.resx">
+      <DependentUpon>Page_Users.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Page_Suppliers.resx">
       <DependentUpon>Page_Suppliers.cs</DependentUpon>

@@ -75,8 +75,8 @@ namespace DMM.Pages
 
                 foreach (var result in PaymentCustomerList)
                 {
-                    DateTime dt = result.DateT ?? DateTime.Now;
                     double payment = (double)result.Payment;
+                    DateTime dt = result.DateT ?? DateTime.Now;
                     series2.Points.AddPoint(dt.ToString(), payment);
                 }
 
@@ -87,10 +87,10 @@ namespace DMM.Pages
                     series3.Points.AddPoint(dt.ToString(), debit);
                 }
 
-                foreach (var result in PaymentCustomerList)
+                foreach (var result in PaymentSupplierList)
                 {
-                    DateTime dt = result.DateT ?? DateTime.Now;
                     double payment = (double)result.Payment;
+                    DateTime dt = result.DateT ?? DateTime.Now;
                     series4.Points.AddPoint(dt.ToString(), payment);
                 }
 

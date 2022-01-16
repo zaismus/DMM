@@ -72,5 +72,11 @@ namespace DMM
             AnalysisPage analysisPage = new AnalysisPage();
             LoadPage(analysisPage);
         }
+
+        private void btn_users_Click(object sender, EventArgs e)
+        {
+            Page_Users pageUsers = new Page_Users();
+            LoadPage(pageUsers);
+        }
     }
 }

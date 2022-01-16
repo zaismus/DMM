@@ -87,6 +87,7 @@
       <End Role="TB_Customers" EntitySet="TB_Customers" />
       <End Role="PaymentCustomer" EntitySet="PaymentCustomers" />
     </AssociationSet>
+    <EntitySet Name="TB_Users" EntityType="DBDMMModel.TB_Users" />
   </EntityContainer>
   <EntityType Name="Debit_Customers">
     <Key>
@@ -152,4 +153,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="TB_Users">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Role" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DateT" Type="DateTime" Precision="3" />
+  </EntityType>
 </Schema>

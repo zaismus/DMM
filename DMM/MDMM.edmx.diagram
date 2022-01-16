@@ -15,6 +15,7 @@
         <EntityTypeShape EntityType="DBDMMModel.TB_Customers" Width="1.5" PointX="5.375" PointY="2.5" />
         <AssociationConnector Association="DBDMMModel.FK_Debit_Customers_TB_Customers" />
         <AssociationConnector Association="DBDMMModel.FK_PaymentCustomers_TB_Customers" />
+        <EntityTypeShape EntityType="DBDMMModel.TB_Users" Width="1.5" PointX="0.75" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

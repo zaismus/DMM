@@ -31,5 +31,6 @@ namespace DMM
         public virtual DbSet<Debit_Customers> Debit_Customers { get; set; }
         public virtual DbSet<PaymentCustomer> PaymentCustomers { get; set; }
         public virtual DbSet<TB_Customers> TB_Customers { get; set; }
+        public virtual DbSet<TB_Users> TB_Users { get; set; }
     }
 }

@@ -139,6 +139,7 @@ namespace DMM
             this.btn_users.Name = "btn_users";
             this.btn_users.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btn_users.Text = "Users";
+            this.btn_users.Click += new System.EventHandler(this.btn_users_Click);
             // 
             // btn_settings
             // 
