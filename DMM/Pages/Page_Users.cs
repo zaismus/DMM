@@ -15,19 +15,19 @@ namespace DMM.Pages
     {
         // Define Database, Table & var
         DBDMMEntities db;
-        TB_Suppliers tbAdd;
+        TB_Users tbUsers;
         int id;
 
         public Page_Users()
         {
             InitializeComponent();
-            LoadDataSuppliers();
+            LoadDataUsers();
 
         }
 
         // Load Data
 
-        public void LoadDataSuppliers()
+        public void LoadDataUsers()
         {
             // Instantiate a new DBContext
             DMM.DBDMMEntities dbContext = new DMM.DBDMMEntities();
@@ -41,17 +41,17 @@ namespace DMM.Pages
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            DMM.AddPage.Add_Supplier add = new AddPage.Add_Supplier();
-            add.ids = 0;
+            DMM.AddPage.Add_Users add = new AddPage.Add_Users();
+            add.id = 0;
             add.btn_add.Text = "Ajouter";
             add.btn_addclose.Text = "Ajouter+Fermé";
-            //add.pageSuppliers = this;
+            add.pageUsers = this;
             add.Show();
         }
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-            LoadDataSuppliers();
+            LoadDataUsers();
         }
 
         private void btn_edit_Click(object sender, EventArgs e)
@@ -63,15 +63,16 @@ namespace DMM.Pages
                 if (id > 0)
                 {
                     db = new DBDMMEntities();
-                    tbAdd = db.TB_Suppliers.Where(x => x.ID == id).FirstOrDefault();
-                    DMM.AddPage.Add_Supplier add = new AddPage.Add_Supplier();
-                    add.ids = id;
+                    tbUsers = db.TB_Users.Where(x => x.ID == id).FirstOrDefault();
+                    DMM.AddPage.Add_Users add = new AddPage.Add_Users();
+                    add.id = id;
                     add.btn_add.Text = "Éditer";
                     add.btn_addclose.Text = "Éditer+Fermé";
-                    add.edt_name.Text = tbAdd.FullName.ToString();
-                    add.edt_phone.Text = tbAdd.Phone;
-                    add.edt_address.Text = tbAdd.Address;
-                    //add.pageSuppliers = this;
+                    add.edt_fullname.Text = tbUsers.FullName.ToString();
+                    add.edt_username.Text = tbUsers.UserName;
+                    add.edt_password.Text = tbUsers.Password;
+                    add.cmb_role.Text = tbUsers.Role;
+                    add.pageUsers = this;
                     add.Show();
 
                 }
@@ -100,10 +101,10 @@ namespace DMM.Pages
                     if (id > 0)
                     {
                         db = new DBDMMEntities();
-                        tbAdd = db.TB_Suppliers.Where(x => x.ID == id).FirstOrDefault();
-                        db.Entry(tbAdd).State = System.Data.Entity.EntityState.Deleted;
+                        tbUsers = db.TB_Users.Where(x => x.ID == id).FirstOrDefault();
+                        db.Entry(tbUsers).State = System.Data.Entity.EntityState.Deleted;
                         db.SaveChanges();
-                        LoadDataSuppliers();
+                        LoadDataUsers();
                     }
                     else
                     {
@@ -121,33 +122,6 @@ namespace DMM.Pages
         private void btn_print_Click(object sender, EventArgs e)
         {
             gridControl1.ShowPrintPreview();
-        }
-
-        private void btn_log_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                id = Convert.ToInt32(gridView1.GetFocusedRowCellValue("ID"));
-
-                if (id > 0)
-                {
-                    db = new DBDMMEntities();
-                    tbAdd = db.TB_Suppliers.Where(x => x.ID == id).FirstOrDefault();
-                    DMM.AddPage.Log_Supplier add = new AddPage.Log_Supplier();
-                    add.txt_name.Text = id.ToString() + " : " + tbAdd.FullName.ToString(); ;
-                    add.txt_id.Text = id.ToString();
-                    add.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Il n'y a pas de données à modifier");
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
     }
 }

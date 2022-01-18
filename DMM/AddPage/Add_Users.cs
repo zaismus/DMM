@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity.Migrations;
+using Microsoft.AspNet.Identity;
 
 namespace DMM.AddPage
 {
@@ -22,23 +23,23 @@ namespace DMM.AddPage
 
         // Define Database, Table, var & Page
         DBDMMEntities db;
-        TB_Suppliers tbAdd;
-        public int ids;
-        public DMM.Pages.Page_Suppliers pageSuppliers;
+        TB_Users tbUser;
+        public int id;
+        public DMM.Pages.Page_Users pageUsers;
 
 
         // Function Add
         private void Add()
         {
             // Check Empty value
-            if (edt_name.Text == "")
+            if (edt_username.Text == "" || edt_password.Text == "" || cmb_role.SelectedItem == null)
             {
                 MessageBox.Show("Certains champs sont obligatoires", "", MessageBoxButtons.OK, MessageBoxIcon.Warning); ;
             }
             else
             {
                 // Check if Add or Edit Data
-                if (ids == 0)
+                if (id == 0)
                 {
                     AddData();
                     ClearData();
@@ -49,7 +50,7 @@ namespace DMM.AddPage
                 }
 
                 // Update Data
-                pageSuppliers.LoadDataSuppliers();
+                pageUsers.LoadDataUsers();
             }
         }
 
@@ -59,16 +60,19 @@ namespace DMM.AddPage
             try
             {
                 db = new DBDMMEntities();
-                tbAdd = new TB_Suppliers
+                var hasher = new PasswordHasher();
+                string myhash = hasher.HashPassword(edt_password.Text);
+                edt_password.Text = myhash;
+                tbUser = new TB_Users
                 {
-                    FullName = edt_name.Text,
-                    Phone = edt_phone.Text,
-                    Address = edt_address.Text,
-                    Debit = 0,
+                    FullName = edt_fullname.Text,
+                    UserName = edt_username.Text.Trim(),
+                    Password = edt_password.Text,
+                    Role = cmb_role.SelectedItem.ToString(),
                     DateT = DateTime.Now
                 };
 
-                db.Entry(tbAdd).State = System.Data.Entity.EntityState.Added;
+                db.Entry(tbUser).State = System.Data.Entity.EntityState.Added;
                 db.SaveChanges();
                 toastNotificationsManager1.ShowNotification("c5735894-7960-49f3-a6b9-8a4d4ab688fd");
                 
@@ -79,24 +83,46 @@ namespace DMM.AddPage
             }
         }
 
+        bool IsPasswordChangedByUser;
+        bool IsPasswordFocused = false;
+
+        private void edt_password_KeyDown(object sender, KeyEventArgs e)
+        {
+            IsPasswordFocused = true;
+        }
+
+        private void edt_password_EditValueChanged(object sender, EventArgs e)
+        {
+            if (IsPasswordFocused)
+                IsPasswordChangedByUser = true;
+            else
+                IsPasswordChangedByUser = false;
+        }
+
         //Edit Data
         private void EditData()
         {
-            try
+            edt_password_EditValueChanged(null, null);
+            if (IsPasswordChangedByUser)
+            {
+                var hasher = new PasswordHasher();
+                string myhash = hasher.HashPassword(edt_password.Text);
+                edt_password.Text = myhash;
+            }
+                try
             {
                 db = new DBDMMEntities();
-                double getdebit = (double)db.TB_Suppliers.Where(x => x.ID == ids).Select(x => x.Debit).FirstOrDefault();
-                tbAdd = new TB_Suppliers
+                tbUser = new TB_Users
                 {
-                    ID = ids,
-                    FullName = edt_name.Text,
-                    Phone = edt_phone.Text,
-                    Address = edt_address.Text,
+                    ID = id,
+                    FullName = edt_fullname.Text,
+                    UserName = edt_username.Text,
+                    Password = edt_password.Text,
+                    Role = cmb_role.Text,
                     DateT = DateTime.Now,
-                    Debit = getdebit,
                 };
 
-                db.Set<TB_Suppliers>().AddOrUpdate(tbAdd);
+                db.Set<TB_Users>().AddOrUpdate(tbUser);
                 db.SaveChanges();
                 toastNotificationsManager1.ShowNotification("2119f7a4-b0f2-4ee8-9aea-c107924c374b");
 
@@ -123,9 +149,11 @@ namespace DMM.AddPage
         // Clear Value
         private void ClearData()
         {
-            edt_address.Text =
-            edt_name.Text =
-            edt_phone.Text = "";
+            edt_password.Text =
+            edt_fullname.Text =
+            edt_username.Text = "";
         }
+
+
     }
 }
