@@ -78,5 +78,11 @@ namespace DMM
             Page_Users pageUsers = new Page_Users();
             LoadPage(pageUsers);
         }
+
+        private void btn_settings_Click(object sender, EventArgs e)
+        {
+            Page_Settings pageSettings = new Page_Settings();
+            LoadPage(pageSettings);
+        }
     }
 }

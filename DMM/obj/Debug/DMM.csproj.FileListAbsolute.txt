@@ -420,3 +420,5 @@ C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.Pages.Page_Users.
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\Microsoft.AspNet.Identity.Core.dll
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.csprojAssemblyReference.cache
+C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.FRM_Settings.resources
+C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.Pages.Page_Settings.resources

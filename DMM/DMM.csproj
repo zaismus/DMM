@@ -140,6 +140,12 @@
     <Compile Include="Debit_Suppliers.cs">
       <DependentUpon>MDMM.tt</DependentUpon>
     </Compile>
+    <Compile Include="FRM_Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_Settings.Designer.cs">
+      <DependentUpon>FRM_Settings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,12 @@
     </Compile>
     <Compile Include="Pages\Page_Customers.Designer.cs">
       <DependentUpon>Page_Customers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Page_Settings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\Page_Settings.Designer.cs">
+      <DependentUpon>Page_Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\Page_Users.cs">
       <SubType>UserControl</SubType>
@@ -241,6 +253,9 @@
     <EmbeddedResource Include="AddPage\Log_Supplier.resx">
       <DependentUpon>Log_Supplier.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FRM_Settings.resx">
+      <DependentUpon>FRM_Settings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Page_Customers.resx">
       <DependentUpon>Page_Customers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Page_Settings.resx">
+      <DependentUpon>Page_Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Page_Users.resx">
       <DependentUpon>Page_Users.cs</DependentUpon>
@@ -371,6 +389,9 @@
       <DependentUpon>MDMM.edmx</DependentUpon>
       <LastGenOutput>MDMM.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\save_32x32.png" />
+    <None Include="Resources\updatedataextract.svg" />
+    <None Include="Resources\newdatasource.svg" />
     <None Include="Resources\boreport_32x321.png" />
     <None Include="Resources\boreport2_32x321.png" />
     <None Include="Resources\boreport_32x32.png" />
