@@ -37,9 +37,10 @@ namespace DMM.Pages
             this.txt_name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_restore = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_backup = new DevExpress.XtraEditors.SimpleButton();
             this.btn_save = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_add = new DevExpress.XtraEditors.SimpleButton();
+            this.pn_progress = new DevExpress.XtraWaitForm.ProgressPanel();
             this.Général.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo.Properties)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -121,8 +122,9 @@ namespace DMM.Pages
             // groupBox2
             // 
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox2.Controls.Add(this.simpleButton1);
-            this.groupBox2.Controls.Add(this.btn_add);
+            this.groupBox2.Controls.Add(this.pn_progress);
+            this.groupBox2.Controls.Add(this.btn_restore);
+            this.groupBox2.Controls.Add(this.btn_backup);
             this.groupBox2.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(37, 484);
             this.groupBox2.Name = "groupBox2";
@@ -130,6 +132,33 @@ namespace DMM.Pages
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Base de données";
+            // 
+            // btn_restore
+            // 
+            this.btn_restore.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_restore.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_restore.Appearance.Options.UseFont = true;
+            this.btn_restore.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btn_restore.ImageOptions.SvgImage = global::DMM.Properties.Resources.updatedataextract;
+            this.btn_restore.Location = new System.Drawing.Point(476, 54);
+            this.btn_restore.Name = "btn_restore";
+            this.btn_restore.Size = new System.Drawing.Size(167, 56);
+            this.btn_restore.TabIndex = 6;
+            this.btn_restore.Text = "Restauré";
+            // 
+            // btn_backup
+            // 
+            this.btn_backup.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_backup.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_backup.Appearance.Options.UseFont = true;
+            this.btn_backup.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btn_backup.ImageOptions.SvgImage = global::DMM.Properties.Resources.newdatasource;
+            this.btn_backup.Location = new System.Drawing.Point(26, 54);
+            this.btn_backup.Name = "btn_backup";
+            this.btn_backup.Size = new System.Drawing.Size(167, 56);
+            this.btn_backup.TabIndex = 5;
+            this.btn_backup.Text = "Sauvegarde";
+            this.btn_backup.Click += new System.EventHandler(this.btn_backup_Click);
             // 
             // btn_save
             // 
@@ -145,31 +174,30 @@ namespace DMM.Pages
             this.btn_save.Text = "Sauver";
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
-            // simpleButton1
+            // pn_progress
             // 
-            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.simpleButton1.ImageOptions.SvgImage = global::DMM.Properties.Resources.updatedataextract;
-            this.simpleButton1.Location = new System.Drawing.Point(476, 54);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(167, 56);
-            this.simpleButton1.TabIndex = 6;
-            this.simpleButton1.Text = "Restauré";
-            // 
-            // btn_add
-            // 
-            this.btn_add.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btn_add.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add.Appearance.Options.UseFont = true;
-            this.btn_add.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btn_add.ImageOptions.SvgImage = global::DMM.Properties.Resources.newdatasource;
-            this.btn_add.Location = new System.Drawing.Point(26, 54);
-            this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(167, 56);
-            this.btn_add.TabIndex = 5;
-            this.btn_add.Text = "Sauvegarde";
+            this.pn_progress.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pn_progress.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.pn_progress.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pn_progress.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pn_progress.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.pn_progress.Appearance.Options.UseBackColor = true;
+            this.pn_progress.Appearance.Options.UseFont = true;
+            this.pn_progress.Appearance.Options.UseForeColor = true;
+            this.pn_progress.AppearanceCaption.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pn_progress.AppearanceCaption.ForeColor = System.Drawing.Color.Teal;
+            this.pn_progress.AppearanceCaption.Options.UseBackColor = true;
+            this.pn_progress.AppearanceCaption.Options.UseForeColor = true;
+            this.pn_progress.AppearanceDescription.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Information;
+            this.pn_progress.AppearanceDescription.Options.UseForeColor = true;
+            this.pn_progress.Caption = "Chargement en cours";
+            this.pn_progress.Description = "Veuillez patienter ";
+            this.pn_progress.Location = new System.Drawing.Point(232, 44);
+            this.pn_progress.Name = "pn_progress";
+            this.pn_progress.Size = new System.Drawing.Size(205, 66);
+            this.pn_progress.TabIndex = 8;
+            this.pn_progress.Text = "progressPanel1";
+            this.pn_progress.Visible = false;
             // 
             // Page_Settings
             // 
@@ -200,8 +228,9 @@ namespace DMM.Pages
         private System.Windows.Forms.TextBox txt_name;
         private System.Windows.Forms.Label label1;
         public DevExpress.XtraEditors.SimpleButton btn_save;
-        public DevExpress.XtraEditors.SimpleButton simpleButton1;
-        public DevExpress.XtraEditors.SimpleButton btn_add;
+        public DevExpress.XtraEditors.SimpleButton btn_restore;
+        public DevExpress.XtraEditors.SimpleButton btn_backup;
         private DevExpress.XtraEditors.PictureEdit pic_logo;
+        private DevExpress.XtraWaitForm.ProgressPanel pn_progress;
     }
 }

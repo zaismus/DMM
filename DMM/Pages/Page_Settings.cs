@@ -14,6 +14,7 @@ namespace DMM.Pages
 {
     public partial class Page_Settings : DevExpress.XtraEditors.XtraUserControl
     {
+        DBDMMEntities db;
         MemoryStream memo;
         public Page_Settings()
         {
@@ -56,6 +57,55 @@ namespace DMM.Pages
             catch { }
             Properties.Settings.Default.Save();
             MessageBox.Show("Vos préférences ont été enregistrées avec succès!", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+        }
+
+        private async void btn_backup_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FolderBrowserDialog folder = new FolderBrowserDialog();
+                var rs = folder.ShowDialog();
+                if (rs == DialogResult.OK)
+                {
+                    pn_progress.Visible = true;
+                    var result = await Task.Run(() => BackUp(folder));
+
+                    if (result == true)
+                    {
+                        pn_progress.Visible = false;
+                        MessageBox.Show("la base de données a été sauvegardée avec succè");
+                    }
+                    else
+                    {
+                        pn_progress.Visible = false;
+                        MessageBox.Show("sauvegarde échoue");
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("sauvegarde échoue");
+            }
+        }
+
+        private bool BackUp (FolderBrowserDialog folder)
+        {
+            try
+            {
+                db = new DBDMMEntities();
+
+                string dbname = db.Database.Connection.Database;
+                string dbBackUp = "DMMback" + DateTime.Now.ToString("yyyyMMddHHmm");
+                var fullpath = folder.SelectedPath.ToString().TrimEnd('\\') + "\\" + dbBackUp + ".bak";
+                string sqlCommand = @"BACKUP DATABASE [{0}] TO DISK = '" + fullpath + "' WITH NOFORMAT, NOINIT, NAME = N'DBMDD', SKIP, NOREWIND, NOUNLOAD, STATS =10";
+                int path = db.Database.ExecuteSqlCommand(System.Data.Entity.TransactionalBehavior.DoNotEnsureTransaction, string.Format(sqlCommand, dbname, dbBackUp));
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }
