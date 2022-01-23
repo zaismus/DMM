@@ -23,6 +23,7 @@ namespace DMM.AddPage
         PaymentCustomer tbPayment;
         int id;
         int PaymentValue;
+        int updateData = 0;
         double Debit;
         double Payment;
         double Paymentrs;
@@ -395,6 +396,20 @@ namespace DMM.AddPage
         private void gridControl1_DataSourceChanged(object sender, EventArgs e)
         {
             DebitPaymentCal();
+        }
+
+        private void txt_paymentrs_TextChanged(object sender, EventArgs e)
+        {
+            updateData++;
+        }
+
+        private async void Log_Customer_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (updateData > 1)
+            {
+                BL.UPDATE uPDATE = new BL.UPDATE();
+                await Task.Run(() => uPDATE.CustomerDataUpdate());
+            }
         }
     }
 }

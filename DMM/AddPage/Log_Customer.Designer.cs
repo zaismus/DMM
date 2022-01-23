@@ -111,6 +111,7 @@ namespace DMM.AddPage
             this.txt_paymentrs.TabIndex = 13;
             this.txt_paymentrs.Text = "Résiduel";
             this.txt_paymentrs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txt_paymentrs.TextChanged += new System.EventHandler(this.txt_paymentrs_TextChanged);
             // 
             // txt_payment
             // 
@@ -460,6 +461,7 @@ namespace DMM.AddPage
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registre des Clients";
             this.TopMost = true;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Log_Customer_FormClosed);
             this.Load += new System.EventHandler(this.Log_Supplier_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

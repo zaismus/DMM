@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Data.Entity;
 
 namespace DMM.Pages
 {
@@ -19,16 +20,6 @@ namespace DMM.Pages
         public Page_Settings()
         {
             InitializeComponent();
-        }
-
-        private void Page_Settings_Load(object sender, EventArgs e)
-        {
-            GetSettings();
-        }
-
-        private void btn_save_Click(object sender, EventArgs e)
-        {
-            SetSettings();
         }
 
         private void GetSettings()
@@ -59,36 +50,18 @@ namespace DMM.Pages
             MessageBox.Show("Vos préférences ont été enregistrées avec succès!", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
         }
 
-        private async void btn_backup_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                FolderBrowserDialog folder = new FolderBrowserDialog();
-                var rs = folder.ShowDialog();
-                if (rs == DialogResult.OK)
-                {
-                    pn_progress.Visible = true;
-                    var result = await Task.Run(() => BackUp(folder));
 
-                    if (result == true)
-                    {
-                        pn_progress.Visible = false;
-                        MessageBox.Show("la base de données a été sauvegardée avec succè");
-                    }
-                    else
-                    {
-                        pn_progress.Visible = false;
-                        MessageBox.Show("sauvegarde échoue");
-                    }
-                }
-            }
-            catch
-            {
-                MessageBox.Show("sauvegarde échoue");
-            }
+        private void Page_Settings_Load(object sender, EventArgs e)
+        {
+            GetSettings();
         }
 
-        private bool BackUp (FolderBrowserDialog folder)
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            SetSettings();
+        }
+
+        private bool BackUp(FolderBrowserDialog folder)
         {
             try
             {
@@ -105,6 +78,84 @@ namespace DMM.Pages
             catch
             {
                 return false;
+            }
+        }
+
+        private async void btn_backup_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FolderBrowserDialog folder = new FolderBrowserDialog();
+                var rs = folder.ShowDialog();
+                if (rs == DialogResult.OK)
+                {
+                    pn_progress.Visible = true;
+                    var result = await Task.Run(() => BackUp(folder));
+
+                    if (result == true)
+                    {
+                        pn_progress.Visible = false;
+                        //MessageBox.Show("la base de données a été Sauvegardée avec succè");
+                        MessageBox.Show("La Sauvegarde de la base de données s'est terminée avec succès");
+
+                    }
+                    else
+                    {
+                        pn_progress.Visible = false;
+                        MessageBox.Show("La Sauvegarde de la base de données a échoué");
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("La Sauvegarde de la base de données a échoué");
+            }
+        }
+
+        private bool Restore(OpenFileDialog folder)
+        {
+            db = new DBDMMEntities();
+            try
+            {
+                string dbname = db.Database.Connection.Database;
+                var fullpath = folder.FileName;
+                string sqlCommand = @"Use master; ALTER DATABASE [{0}] SET OFFLINE WITH ROLLBACK IMMEDIATE ; RESTORE DATABASE [{0}] From DISK = '" + folder.FileName + "' WITH REPLACE";
+                db.Database.ExecuteSqlCommand(System.Data.Entity.TransactionalBehavior.DoNotEnsureTransaction, string.Format(sqlCommand, dbname));
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private async void btn_restore_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog folder = new OpenFileDialog();
+                var rs = folder.ShowDialog();
+                if (rs == DialogResult.OK)
+                {
+                    pn_progress.Visible = true;
+                    var result = await Task.Run(() => Restore(folder));
+
+                    if (result == true)
+                    {
+                        pn_progress.Visible = false;
+                        MessageBox.Show("La Restauration de la base de données s'est terminée avec succès");
+                    }
+                    else
+                    {
+                        pn_progress.Visible = false;
+                        MessageBox.Show("La Restauration de la base de données a échoué");
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("La Restauration de la base de données a échoué");
             }
         }
     }

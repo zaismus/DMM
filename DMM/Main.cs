@@ -54,13 +54,6 @@ namespace DMM
             LoadPage(page_Customers);
         }
 
-        private async void Main_Activated(object sender, EventArgs e)
-        {
-            BL.UPDATE uPDATE = new BL.UPDATE();
-            await Task.Run(() => uPDATE.SupplierDataUpdate());
-            await Task.Run(() => uPDATE.CustomerDataUpdate());
-        }
-
         private void btn_report_Click(object sender, EventArgs e)
         {
             ReportPage reportPage = new ReportPage();
