@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity.Migrations;
-using Microsoft.AspNet.Identity;
+using Liphsoft.Crypto.Argon2;
 
 namespace DMM.AddPage
 {
@@ -60,8 +60,9 @@ namespace DMM.AddPage
             try
             {
                 db = new DBDMMEntities();
+
                 var hasher = new PasswordHasher();
-                string myhash = hasher.HashPassword(edt_password.Text);
+                string myhash = hasher.Hash(edt_password.Text);
                 edt_password.Text = myhash;
                 tbUser = new TB_Users
                 {
@@ -106,7 +107,7 @@ namespace DMM.AddPage
             if (IsPasswordChangedByUser)
             {
                 var hasher = new PasswordHasher();
-                string myhash = hasher.HashPassword(edt_password.Text);
+                string myhash = hasher.Hash(edt_password.Text);
                 edt_password.Text = myhash;
             }
                 try

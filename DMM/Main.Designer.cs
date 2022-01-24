@@ -202,6 +202,7 @@ namespace DMM
             this.btn_logout.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_logout.ItemAppearance.Normal.Options.UseFont = true;
             this.btn_logout.Name = "btn_logout";
+            this.btn_logout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_logout_ItemClick);
             // 
             // barButtonItem2
             // 
@@ -238,6 +239,7 @@ namespace DMM
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DMM";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).EndInit();
@@ -253,15 +255,15 @@ namespace DMM
         private DevExpress.XtraBars.Navigation.AccordionControlElement btn_home;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btn_suppliers;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btn_customer;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement btn_report;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement btn_analysis;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement btn_users;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement btn_settings;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btn_about;
-        private DevExpress.XtraBars.BarStaticItem txt_username;
-        private DevExpress.XtraBars.BarStaticItem txt_role;
         private DevExpress.XtraBars.BarButtonItem btn_logout;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        public DevExpress.XtraBars.BarStaticItem txt_username;
+        public DevExpress.XtraBars.BarStaticItem txt_role;
+        public DevExpress.XtraBars.Navigation.AccordionControlElement btn_report;
+        public DevExpress.XtraBars.Navigation.AccordionControlElement btn_analysis;
+        public DevExpress.XtraBars.Navigation.AccordionControlElement btn_users;
+        public DevExpress.XtraBars.Navigation.AccordionControlElement btn_settings;
     }
 }
 

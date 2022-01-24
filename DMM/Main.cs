@@ -77,5 +77,17 @@ namespace DMM
             Page_Settings pageSettings = new Page_Settings();
             LoadPage(pageSettings);
         }
+
+        private void btn_logout_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            AddPage.FRM_UserLogin frmUserLogin = new AddPage.FRM_UserLogin();
+            frmUserLogin.Show();
+            this.Hide();
+        }
+
+        private void Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
