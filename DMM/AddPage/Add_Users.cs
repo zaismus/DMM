@@ -143,8 +143,16 @@ namespace DMM.AddPage
 
         private void btn_addclose_Click(object sender, EventArgs e)
         {
-            Add();
-            Close();
+            if (btn_addclose.Text == "Ajouter un Utilisateur")
+            {
+                Add();
+                Application.Restart();
+            }
+            else
+            {
+                Add();
+                Close();
+            }
         }
 
         // Clear Value
@@ -155,6 +163,12 @@ namespace DMM.AddPage
             edt_username.Text = "";
         }
 
-
+        private void Add_Users_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (btn_addclose.Text == "Ajouter un Utilisateur")
+            {
+                Application.Exit();
+            }
+        }
     }
 }

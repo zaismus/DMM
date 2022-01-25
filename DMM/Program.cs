@@ -18,7 +18,8 @@ namespace DMM
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Main());
-            Application.Run(new DMM.AddPage.FRM_UserLogin());
+            //Application.Run(new DMM.AddPage.FRM_UserLogin());
+            Application.Run(new DMM.AddPage.FRM_Start());
         }
     }
 }

@@ -109,6 +109,12 @@
     <Compile Include="AddPage\Add_Customer.Designer.cs">
       <DependentUpon>Add_Customer.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddPage\FRM_Start.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPage\FRM_Start.Designer.cs">
+      <DependentUpon>FRM_Start.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddPage\FRM_UserLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,12 +156,6 @@
     </Compile>
     <Compile Include="Debit_Suppliers.cs">
       <DependentUpon>MDMM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="FRM_Settings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FRM_Settings.Designer.cs">
-      <DependentUpon>FRM_Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -252,6 +252,9 @@
     <EmbeddedResource Include="AddPage\Add_Customer.resx">
       <DependentUpon>Add_Customer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddPage\FRM_Start.resx">
+      <DependentUpon>FRM_Start.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddPage\FRM_UserLogin.resx">
       <DependentUpon>FRM_UserLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -266,9 +269,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddPage\Log_Supplier.resx">
       <DependentUpon>Log_Supplier.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FRM_Settings.resx">
-      <DependentUpon>FRM_Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
