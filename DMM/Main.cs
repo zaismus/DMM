@@ -89,5 +89,14 @@ namespace DMM
         {
             Application.Exit();
         }
+
+        private void btn_about_Click(object sender, EventArgs e)
+        {
+            //AddPage.FRM_About frmAbout = new AddPage.FRM_About();
+            //frmAbout.Show();
+
+            Page_About pageAbout = new Page_About();
+            LoadPage(pageAbout);
+        }
     }
 }

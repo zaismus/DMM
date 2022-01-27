@@ -39,7 +39,6 @@ namespace DMM.Pages
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colFullName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUserName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPassword = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRole = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDateT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1.SuspendLayout();
@@ -148,7 +147,6 @@ namespace DMM.Pages
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colFullName,
             this.colUserName,
-            this.colPassword,
             this.colRole,
             this.colDateT});
             this.gridView1.GridControl = this.gridControl1;
@@ -172,15 +170,6 @@ namespace DMM.Pages
             this.colUserName.Visible = true;
             this.colUserName.VisibleIndex = 1;
             // 
-            // colPassword
-            // 
-            this.colPassword.Caption = "Mot de passe";
-            this.colPassword.FieldName = "Password";
-            this.colPassword.Name = "colPassword";
-            this.colPassword.OptionsColumn.AllowEdit = false;
-            this.colPassword.Visible = true;
-            this.colPassword.VisibleIndex = 2;
-            // 
             // colRole
             // 
             this.colRole.Caption = "Rôle";
@@ -188,7 +177,7 @@ namespace DMM.Pages
             this.colRole.Name = "colRole";
             this.colRole.OptionsColumn.AllowEdit = false;
             this.colRole.Visible = true;
-            this.colRole.VisibleIndex = 3;
+            this.colRole.VisibleIndex = 2;
             // 
             // colDateT
             // 
@@ -197,7 +186,7 @@ namespace DMM.Pages
             this.colDateT.Name = "colDateT";
             this.colDateT.OptionsColumn.AllowEdit = false;
             this.colDateT.Visible = true;
-            this.colDateT.VisibleIndex = 4;
+            this.colDateT.VisibleIndex = 3;
             // 
             // Page_Users
             // 
@@ -226,7 +215,6 @@ namespace DMM.Pages
         private DevExpress.XtraEditors.SimpleButton btn_print;
         private DevExpress.XtraGrid.Columns.GridColumn colFullName;
         private DevExpress.XtraGrid.Columns.GridColumn colUserName;
-        private DevExpress.XtraGrid.Columns.GridColumn colPassword;
         private DevExpress.XtraGrid.Columns.GridColumn colRole;
         private DevExpress.XtraGrid.Columns.GridColumn colDateT;
     }

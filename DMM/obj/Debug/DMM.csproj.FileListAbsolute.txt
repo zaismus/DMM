@@ -424,3 +424,5 @@ C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.csproj.CopyComple
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.exe
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.pdb
 C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.AddPage.FRM_Start.resources
+C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.AddPage.FRM_About.resources
+C:\Users\MacBook\Documents\ZM\C# Project\DMM\DMM\obj\Debug\DMM.Pages.Page_About.resources

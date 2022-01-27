@@ -159,6 +159,7 @@ namespace DMM
             this.btn_about.Name = "btn_about";
             this.btn_about.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btn_about.Text = "About";
+            this.btn_about.Click += new System.EventHandler(this.btn_about_Click);
             // 
             // fluentDesignFormControl1
             // 

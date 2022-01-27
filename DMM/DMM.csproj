@@ -109,6 +109,12 @@
     <Compile Include="AddPage\Add_Customer.Designer.cs">
       <DependentUpon>Add_Customer.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddPage\FRM_About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPage\FRM_About.Designer.cs">
+      <DependentUpon>FRM_About.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddPage\FRM_Start.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +190,12 @@
     <Compile Include="Pages\AnalysisPage.Designer.cs">
       <DependentUpon>AnalysisPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Page_About.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\Page_About.Designer.cs">
+      <DependentUpon>Page_About.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Page_Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -252,6 +264,9 @@
     <EmbeddedResource Include="AddPage\Add_Customer.resx">
       <DependentUpon>Add_Customer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddPage\FRM_About.resx">
+      <DependentUpon>FRM_About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddPage\FRM_Start.resx">
       <DependentUpon>FRM_Start.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\AnalysisPage.resx">
       <DependentUpon>AnalysisPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Page_About.resx">
+      <DependentUpon>Page_About.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Page_Home.resx">
       <DependentUpon>Page_Home.cs</DependentUpon>

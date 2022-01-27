@@ -64,6 +64,8 @@ namespace DMM.AddPage
         {
             await Task.Run(() => Thread.Sleep(2000));
 
+            labelStatus.Text = "Connexion à la base de données, Veuillez patienter...";
+
             var st = await Task.Run(() => CheckStartApp());
 
             if (st == 0)
